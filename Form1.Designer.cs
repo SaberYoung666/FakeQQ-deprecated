@@ -31,7 +31,7 @@
 			this.HeadImagePicture = new OvalPictureBox();
 			this.BackgroundPicture = new System.Windows.Forms.PictureBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.cueTextBox1 = new CueTextBox();
+			this.UsernameTextBox = new CueTextBox();
 			((System.ComponentModel.ISupportInitialize)(this.HeadImagePicture)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.BackgroundPicture)).BeginInit();
 			this.SuspendLayout();
@@ -72,14 +72,14 @@
 			this.textBox1.GotFocus += new System.EventHandler(this.UsernameTextBox_GotFocus);
 			this.textBox1.LostFocus += new System.EventHandler(this.UsernameTextBox_LostFocus);
 			// 
-			// cueTextBox1
+			// UsernameTextBox
 			// 
-			this.cueTextBox1.Cue = null;
-			this.cueTextBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.cueTextBox1.Location = new System.Drawing.Point(60, 174);
-			this.cueTextBox1.Name = "cueTextBox1";
-			this.cueTextBox1.Size = new System.Drawing.Size(240, 29);
-			this.cueTextBox1.TabIndex = 4;
+			this.UsernameTextBox.Cue = null;
+			this.UsernameTextBox.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.UsernameTextBox.Location = new System.Drawing.Point(60, 174);
+			this.UsernameTextBox.Name = "UsernameTextBox";
+			this.UsernameTextBox.Size = new System.Drawing.Size(240, 29);
+			this.UsernameTextBox.TabIndex = 4;
 			// 
 			// MainWindow
 			// 
@@ -87,7 +87,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.ClientSize = new System.Drawing.Size(352, 450);
-			this.Controls.Add(this.cueTextBox1);
+			this.Controls.Add(this.UsernameTextBox);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.HeadImagePicture);
 			this.Controls.Add(this.BackgroundPicture);
@@ -106,7 +106,7 @@
 		private System.Windows.Forms.PictureBox BackgroundPicture;
 		private OvalPictureBox HeadImagePicture;
 		private System.Windows.Forms.TextBox textBox1;
-		private CueTextBox cueTextBox1;
+		private CueTextBox UsernameTextBox;
 	}
 }
 
