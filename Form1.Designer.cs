@@ -1,6 +1,6 @@
 ﻿namespace FakeQQ
 {
-	partial class Form1
+	partial class MainWindow
 	{
 		/// <summary>
 		/// 必需的设计器变量。
@@ -28,36 +28,85 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.backgroundPicture = new System.Windows.Forms.PictureBox();
-			((System.ComponentModel.ISupportInitialize)(this.backgroundPicture)).BeginInit();
+			this.HeadImagePicture = new OvalPictureBox();
+			this.BackgroundPicture = new System.Windows.Forms.PictureBox();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.cueTextBox1 = new CueTextBox();
+			((System.ComponentModel.ISupportInitialize)(this.HeadImagePicture)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.BackgroundPicture)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// backgroundPicture
+			// HeadImagePicture
 			// 
-			this.backgroundPicture.BackgroundImage = global::FakeQQ.Properties.Resources.动态背景图test;
-			this.backgroundPicture.Location = new System.Drawing.Point(-1, 0);
-			this.backgroundPicture.Name = "backgroundPicture";
-			this.backgroundPicture.Size = new System.Drawing.Size(362, 319);
-			this.backgroundPicture.TabIndex = 0;
-			this.backgroundPicture.TabStop = false;
+			this.HeadImagePicture.BackColor = System.Drawing.Color.Transparent;
+			this.HeadImagePicture.BackgroundImage = global::FakeQQ.Properties.Resources.logo;
+			this.HeadImagePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.HeadImagePicture.Location = new System.Drawing.Point(140, 64);
+			this.HeadImagePicture.Name = "HeadImagePicture";
+			this.HeadImagePicture.Size = new System.Drawing.Size(80, 80);
+			this.HeadImagePicture.TabIndex = 2;
+			this.HeadImagePicture.TabStop = false;
 			// 
-			// Form1
+			// BackgroundPicture
+			// 
+			this.BackgroundPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.BackgroundPicture.Image = global::FakeQQ.Properties.Resources.mainWindowBackground;
+			this.BackgroundPicture.Location = new System.Drawing.Point(0, 0);
+			this.BackgroundPicture.Name = "BackgroundPicture";
+			this.BackgroundPicture.Size = new System.Drawing.Size(352, 450);
+			this.BackgroundPicture.TabIndex = 0;
+			this.BackgroundPicture.TabStop = false;
+			this.BackgroundPicture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseDown);
+			this.BackgroundPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseMove);
+			this.BackgroundPicture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseUp);
+			// 
+			// textBox1
+			// 
+			this.textBox1.CausesValidation = false;
+			this.textBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox1.Location = new System.Drawing.Point(60, 237);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(240, 29);
+			this.textBox1.TabIndex = 3;
+			this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.textBox1.GotFocus += new System.EventHandler(this.UsernameTextBox_GotFocus);
+			this.textBox1.LostFocus += new System.EventHandler(this.UsernameTextBox_LostFocus);
+			// 
+			// cueTextBox1
+			// 
+			this.cueTextBox1.Cue = null;
+			this.cueTextBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.cueTextBox1.Location = new System.Drawing.Point(60, 174);
+			this.cueTextBox1.Name = "cueTextBox1";
+			this.cueTextBox1.Size = new System.Drawing.Size(240, 29);
+			this.cueTextBox1.TabIndex = 4;
+			// 
+			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.ClientSize = new System.Drawing.Size(359, 318);
-			this.Controls.Add(this.backgroundPicture);
-			this.Name = "Form1";
-			this.Text = "Form1";
-			((System.ComponentModel.ISupportInitialize)(this.backgroundPicture)).EndInit();
+			this.ClientSize = new System.Drawing.Size(352, 450);
+			this.Controls.Add(this.cueTextBox1);
+			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.HeadImagePicture);
+			this.Controls.Add(this.BackgroundPicture);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Name = "MainWindow";
+			this.Text = "mainWindow";
+			((System.ComponentModel.ISupportInitialize)(this.HeadImagePicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.BackgroundPicture)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.PictureBox backgroundPicture;
+		private System.Windows.Forms.PictureBox BackgroundPicture;
+		private OvalPictureBox HeadImagePicture;
+		private System.Windows.Forms.TextBox textBox1;
+		private CueTextBox cueTextBox1;
 	}
 }
 
