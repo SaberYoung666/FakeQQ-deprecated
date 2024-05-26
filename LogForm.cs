@@ -2,7 +2,9 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using FakeQQ.RoundedCorners;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using MySql.Data.MySqlClient;
 
 namespace FakeQQ
 {
@@ -17,62 +19,25 @@ namespace FakeQQ
 		private void MainWindow_Load(object sender, EventArgs e)
 		{
 			// 设置文本框提示信息
-			UsernameTextBox.Cue = "输入QQ号";
+			AccountTextBox.Cue = "输入QQ号";
 			PasswordTextBox.Cue = "输入QQ密码";
 
 			// 将图片框设为背景图片的透明色
 			ClosePicture.Parent = BackgroundPicture;
 
-			Controls.Add(UsernamePanel);
+			Controls.Add(AccountPanel);
 			Controls.Add(PasswordPanel);
 			Controls.Add(BackgroundPicture);
-		}
 
-		// 绘制圆角窗体
-		// 设置窗体的Region
-		public void SetWindowRegion()
-		{
-			GraphicsPath FormPath;
-			Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
-			FormPath = GetRoundedRectPath(rect, 15);
-			this.Region = new Region(FormPath);
-
-		}
-
-		// 绘制圆角路径
-		private GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
-		{
-			int diameter = radius;
-			Rectangle arcRect = new Rectangle(rect.Location, new Size(diameter, diameter));
-			GraphicsPath path = new GraphicsPath();
-
-			// 左上角
-			path.AddArc(arcRect, 180, 90);
-
-			// 右上角
-			arcRect.X = rect.Right - diameter;
-			path.AddArc(arcRect, 270, 90);
-
-			// 右下角
-			arcRect.Y = rect.Bottom - diameter;
-			path.AddArc(arcRect, 0, 90);
-
-			// 左下角
-			arcRect.X = rect.Left;
-			path.AddArc(arcRect, 90, 90);
-			path.CloseFigure();//闭合曲线
-			return path;
-		}
-
-		// 窗体size发生改变时重新设置Region属性
-		private void MainWindow_Resize(object sender, EventArgs e)
-		{
-			SetWindowRegion();
-		}
-
-		private void UsernamePanel_Resize(object sender, EventArgs e)
-		{
-			SetWindowRegion();
+			// 绘制窗体的圆角
+			int hRgn = RoundCorner.CreateRoundRectRgn(0, 0, this.Width, this.Height, 20, 20);
+			RoundCorner.SetWindowRgn(this.Handle, hRgn, true);
+			RoundCorner.DeleteObject(hRgn);
+			
+			// 绘制圆角
+			RoundCorner.SetRoundRectRgn(AccountPanel, 10);
+			RoundCorner.SetRoundRectRgn(PasswordPanel, 10);
+			RoundCorner.SetRoundRectRgn(LoginButton, 10);
 		}
 
 		// 实现无边框窗口的拖动
@@ -120,6 +85,29 @@ namespace FakeQQ
 			ClosePicture.BackColor = Color.Transparent;
 		}
 
-		
+		// 登录逻辑
+		private void LoginButton_Click(object sender, EventArgs e)
+		{
+			string account = AccountTextBox.Text;
+			string password = PasswordTextBox.Text;
+
+			Connect connect = new Connect();
+			connect.load();
+			string sql = "select * from user where account = " + account + ";";
+			connect.comm = new MySqlCommand(sql, connect.conn);
+			connect.dr = connect.comm.ExecuteReader();
+			connect.dr.Read();
+
+			if (password == connect.dr.GetString("password"))
+			{
+				MessageBox.Show("登录成功！");
+				connect.dr.Close();
+				this.Close();
+			}
+			else
+			{
+				MessageBox.Show("登录失败！");
+			}
+		}
 	}
 }

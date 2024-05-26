@@ -19,11 +19,7 @@ class CueTextBox : TextBox
 			SendMessage(this.Handle, 0x1501, (IntPtr)1, mCue);
 		}
 	}
-	protected override void OnHandleCreated(EventArgs e)
-	{
-		base.OnHandleCreated(e);
-		updateCue();
-	}
+
 	private string mCue;
 
 	// PInvoke
