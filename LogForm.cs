@@ -102,12 +102,25 @@ namespace FakeQQ
 			{
 				MessageBox.Show("登录成功！");
 				connect.dr.Close();
-				this.Close();
+				this.Hide();
+				ListForm listForm = new ListForm();
+				listForm.ShowDialog();
 			}
 			else
 			{
 				MessageBox.Show("登录失败！");
 			}
+		}
+
+		// 清空文本框
+		private void AccountClosePicture_Click(object sender, EventArgs e)
+		{
+			AccountTextBox.Clear();
+		}
+
+		private void PasswordClosePicture_Click(object sender, EventArgs e)
+		{
+			PasswordTextBox.Clear();
 		}
 	}
 }

@@ -38,11 +38,14 @@
 			this.AccountTextBox = new CueTextBox();
 			this.HeadImagePicture = new OvalPictureBox();
 			this.AccountClosePicture = new System.Windows.Forms.PictureBox();
+			this.PasswordClosePicture = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.ClosePicture)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.BackgroundPicture)).BeginInit();
 			this.AccountPanel.SuspendLayout();
+			this.PasswordPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.HeadImagePicture)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.AccountClosePicture)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.PasswordClosePicture)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// ClosePicture
@@ -84,6 +87,7 @@
 			// PasswordPanel
 			// 
 			this.PasswordPanel.BackColor = System.Drawing.Color.White;
+			this.PasswordPanel.Controls.Add(this.PasswordClosePicture);
 			this.PasswordPanel.Location = new System.Drawing.Point(41, 219);
 			this.PasswordPanel.Name = "PasswordPanel";
 			this.PasswordPanel.Size = new System.Drawing.Size(270, 44);
@@ -148,6 +152,18 @@
 			this.AccountClosePicture.Size = new System.Drawing.Size(19, 19);
 			this.AccountClosePicture.TabIndex = 0;
 			this.AccountClosePicture.TabStop = false;
+			this.AccountClosePicture.Click += new System.EventHandler(this.AccountClosePicture_Click);
+			// 
+			// PasswordClosePicture
+			// 
+			this.PasswordClosePicture.BackgroundImage = global::FakeQQ.Properties.Resources.Close;
+			this.PasswordClosePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.PasswordClosePicture.Location = new System.Drawing.Point(240, 13);
+			this.PasswordClosePicture.Name = "PasswordClosePicture";
+			this.PasswordClosePicture.Size = new System.Drawing.Size(19, 19);
+			this.PasswordClosePicture.TabIndex = 0;
+			this.PasswordClosePicture.TabStop = false;
+			this.PasswordClosePicture.Click += new System.EventHandler(this.PasswordClosePicture_Click);
 			// 
 			// MainWindow
 			// 
@@ -171,8 +187,10 @@
 			((System.ComponentModel.ISupportInitialize)(this.ClosePicture)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.BackgroundPicture)).EndInit();
 			this.AccountPanel.ResumeLayout(false);
+			this.PasswordPanel.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.HeadImagePicture)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.AccountClosePicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.PasswordClosePicture)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -189,6 +207,7 @@
 		private System.Windows.Forms.Panel PasswordPanel;
 		private System.Windows.Forms.Button LoginButton;
 		private System.Windows.Forms.PictureBox AccountClosePicture;
+		private System.Windows.Forms.PictureBox PasswordClosePicture;
 	}
 }
 
