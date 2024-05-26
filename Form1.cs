@@ -40,7 +40,7 @@ namespace FakeQQ
 			mouseDown = false;
 		}
 
-		private void UsernameTextBox_LostFocus(object sender, EventArgs e)
+		/*private void UsernameTextBox_LostFocus(object sender, EventArgs e)
 		{
 			UsernameTextBox.Text = "失去焦点的提示内容";
 			//显示的字体颜色，灰色
@@ -51,7 +51,7 @@ namespace FakeQQ
 			UsernameTextBox.Text = "";
 			//输入的字体颜色，黑色
 			UsernameTextBox.ForeColor = Color.Black;
-		}
+		}*/
 
 
 	}
