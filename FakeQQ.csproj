@@ -53,6 +53,7 @@
     <Compile Include="CueTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Friends.cs" />
     <Compile Include="ListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +74,9 @@
     <Compile Include="RoundedCorner.cs" />
     <EmbeddedResource Include="LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
