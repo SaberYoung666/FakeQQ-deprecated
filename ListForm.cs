@@ -76,6 +76,7 @@ namespace FakeQQ
             label.Text = friendsList[index].name;
             label.Location = label_location;
             label.BackColor = Color.Transparent;
+            label.Font = new Font("微软雅黑",9f);
         }
 
         public void picCircle(PictureBox avatar)

@@ -61,9 +61,10 @@
             // 
             this.userName.AutoSize = true;
             this.userName.BackColor = System.Drawing.Color.Transparent;
+            this.userName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.userName.Location = new System.Drawing.Point(98, 91);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(71, 15);
+            this.userName.Size = new System.Drawing.Size(83, 20);
             this.userName.TabIndex = 1;
             this.userName.Text = "userName";
             // 
@@ -71,6 +72,7 @@
             // 
             this.signature.AutoEllipsis = true;
             this.signature.BackColor = System.Drawing.Color.Transparent;
+            this.signature.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.signature.Location = new System.Drawing.Point(98, 117);
             this.signature.Name = "signature";
             this.signature.Size = new System.Drawing.Size(240, 20);
