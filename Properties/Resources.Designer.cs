@@ -83,6 +83,26 @@ namespace FakeQQ.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap iconqq {
+            get {
+                object obj = ResourceManager.GetObject("iconqq", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap listclose {
+            get {
+                object obj = ResourceManager.GetObject("listclose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -96,6 +116,16 @@ namespace FakeQQ.Properties {
         internal static System.Drawing.Bitmap mainWindowBackground {
             get {
                 object obj = ResourceManager.GetObject("mainWindowBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap minus {
+            get {
+                object obj = ResourceManager.GetObject("minus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
