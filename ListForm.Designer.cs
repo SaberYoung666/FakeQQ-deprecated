@@ -34,7 +34,13 @@
             this.userName = new System.Windows.Forms.Label();
             this.signature = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.picture_qqicon = new System.Windows.Forms.PictureBox();
+            this.picture_minus = new System.Windows.Forms.PictureBox();
+            this.picture_close = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_qqicon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_minus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_close)).BeginInit();
             this.SuspendLayout();
             // 
             // avatar
@@ -43,7 +49,7 @@
             this.avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.avatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.avatar.Image = ((System.Drawing.Image)(resources.GetObject("avatar.Image")));
-            this.avatar.Location = new System.Drawing.Point(12, 12);
+            this.avatar.Location = new System.Drawing.Point(12, 72);
             this.avatar.Name = "avatar";
             this.avatar.Size = new System.Drawing.Size(80, 80);
             this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -55,7 +61,7 @@
             // 
             this.userName.AutoSize = true;
             this.userName.BackColor = System.Drawing.Color.Transparent;
-            this.userName.Location = new System.Drawing.Point(109, 12);
+            this.userName.Location = new System.Drawing.Point(98, 91);
             this.userName.Name = "userName";
             this.userName.Size = new System.Drawing.Size(71, 15);
             this.userName.TabIndex = 1;
@@ -65,7 +71,7 @@
             // 
             this.signature.AutoEllipsis = true;
             this.signature.BackColor = System.Drawing.Color.Transparent;
-            this.signature.Location = new System.Drawing.Point(109, 54);
+            this.signature.Location = new System.Drawing.Point(98, 117);
             this.signature.Name = "signature";
             this.signature.Size = new System.Drawing.Size(240, 20);
             this.signature.TabIndex = 3;
@@ -82,6 +88,45 @@
             this.imageList1.Images.SetKeyName(3, "下载.jpg");
             this.imageList1.Images.SetKeyName(4, "OIP-C.jpg");
             // 
+            // picture_qqicon
+            // 
+            this.picture_qqicon.BackColor = System.Drawing.Color.Transparent;
+            this.picture_qqicon.Image = global::FakeQQ.Properties.Resources.iconqq;
+            this.picture_qqicon.Location = new System.Drawing.Point(12, 24);
+            this.picture_qqicon.Name = "picture_qqicon";
+            this.picture_qqicon.Size = new System.Drawing.Size(25, 25);
+            this.picture_qqicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture_qqicon.TabIndex = 4;
+            this.picture_qqicon.TabStop = false;
+            // 
+            // picture_minus
+            // 
+            this.picture_minus.BackColor = System.Drawing.Color.Transparent;
+            this.picture_minus.Image = global::FakeQQ.Properties.Resources.minus;
+            this.picture_minus.Location = new System.Drawing.Point(292, 24);
+            this.picture_minus.Name = "picture_minus";
+            this.picture_minus.Size = new System.Drawing.Size(25, 25);
+            this.picture_minus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture_minus.TabIndex = 5;
+            this.picture_minus.TabStop = false;
+            this.picture_minus.Click += new System.EventHandler(this.picture_minus_Click);
+            this.picture_minus.MouseLeave += new System.EventHandler(this.picture_minus_MouseLeave);
+            this.picture_minus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picture_minus_MouseMove);
+            // 
+            // picture_close
+            // 
+            this.picture_close.BackColor = System.Drawing.Color.Transparent;
+            this.picture_close.Image = global::FakeQQ.Properties.Resources.listclose;
+            this.picture_close.Location = new System.Drawing.Point(334, 24);
+            this.picture_close.Name = "picture_close";
+            this.picture_close.Size = new System.Drawing.Size(25, 25);
+            this.picture_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture_close.TabIndex = 6;
+            this.picture_close.TabStop = false;
+            this.picture_close.Click += new System.EventHandler(this.picture_close_Click);
+            this.picture_close.MouseLeave += new System.EventHandler(this.picture_close_MouseLeave);
+            this.picture_close.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picture_close_MouseMove);
+            // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -89,13 +134,23 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(381, 641);
+            this.Controls.Add(this.picture_close);
+            this.Controls.Add(this.picture_minus);
+            this.Controls.Add(this.picture_qqicon);
             this.Controls.Add(this.signature);
             this.Controls.Add(this.userName);
             this.Controls.Add(this.avatar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListForm";
             this.Text = "ListForm";
             this.Load += new System.EventHandler(this.ListForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ListForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListForm_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_qqicon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_minus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_close)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +162,8 @@
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.Label signature;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox picture_qqicon;
+        private System.Windows.Forms.PictureBox picture_minus;
+        private System.Windows.Forms.PictureBox picture_close;
     }
 }
