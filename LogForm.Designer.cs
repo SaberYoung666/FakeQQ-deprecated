@@ -1,6 +1,6 @@
 ﻿namespace FakeQQ
 {
-	partial class MainWindow
+	partial class LogForm
 	{
 		/// <summary>
 		/// 必需的设计器变量。
@@ -28,120 +28,83 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-			this.ClosePicture = new System.Windows.Forms.PictureBox();
-			this.BackgroundPicture = new System.Windows.Forms.PictureBox();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogForm));
+			this.LogInClosePicture = new System.Windows.Forms.PictureBox();
+			this.LogInBackgroundPicture = new System.Windows.Forms.PictureBox();
 			this.AccountPanel = new System.Windows.Forms.Panel();
+			this.AccountClosePicture = new System.Windows.Forms.PictureBox();
 			this.PasswordPanel = new System.Windows.Forms.Panel();
-			this.LoginButton = new System.Windows.Forms.Button();
+			this.PasswordClosePicture = new System.Windows.Forms.PictureBox();
+			this.LogUpPhonePanel = new System.Windows.Forms.Panel();
+			this.LogInButton = new System.Windows.Forms.Button();
+			this.LogUpLabel = new System.Windows.Forms.Label();
+			this.LogUpUsernamePanel = new System.Windows.Forms.Panel();
+			this.LogUpPasswordPanel = new System.Windows.Forms.Panel();
+			this.LogUpButton = new System.Windows.Forms.Button();
+			this.LogInLabel = new System.Windows.Forms.Label();
+			this.LogInPanel = new System.Windows.Forms.Panel();
+			this.LogUpPanel = new System.Windows.Forms.Panel();
+			this.HeadImagePicture = new OvalPictureBox();
 			this.PasswordTextBox = new CueTextBox();
 			this.AccountTextBox = new CueTextBox();
-			this.HeadImagePicture = new OvalPictureBox();
-			this.AccountClosePicture = new System.Windows.Forms.PictureBox();
-			this.PasswordClosePicture = new System.Windows.Forms.PictureBox();
-			((System.ComponentModel.ISupportInitialize)(this.ClosePicture)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.BackgroundPicture)).BeginInit();
+			this.LogUpPhoneTextBox = new CueTextBox();
+			this.LogUpPasswordTextBox = new CueTextBox();
+			this.LogUpUsernameTextBox = new CueTextBox();
+			this.LogUpBackgroundPicture = new System.Windows.Forms.PictureBox();
+			this.LogUpClosePicture = new System.Windows.Forms.PictureBox();
+			this.WelcomeLogUpLabel = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.LogInClosePicture)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogInBackgroundPicture)).BeginInit();
 			this.AccountPanel.SuspendLayout();
-			this.PasswordPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.HeadImagePicture)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.AccountClosePicture)).BeginInit();
+			this.PasswordPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.PasswordClosePicture)).BeginInit();
+			this.LogUpPhonePanel.SuspendLayout();
+			this.LogUpUsernamePanel.SuspendLayout();
+			this.LogUpPasswordPanel.SuspendLayout();
+			this.LogInPanel.SuspendLayout();
+			this.LogUpPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.HeadImagePicture)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogUpBackgroundPicture)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogUpClosePicture)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// ClosePicture
+			// LogInClosePicture
 			// 
-			this.ClosePicture.BackColor = System.Drawing.Color.Transparent;
-			this.ClosePicture.BackgroundImage = global::FakeQQ.Properties.Resources.Close;
-			this.ClosePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.ClosePicture.Location = new System.Drawing.Point(322, 0);
-			this.ClosePicture.Name = "ClosePicture";
-			this.ClosePicture.Size = new System.Drawing.Size(30, 30);
-			this.ClosePicture.TabIndex = 7;
-			this.ClosePicture.TabStop = false;
-			this.ClosePicture.Click += new System.EventHandler(this.ClosePicture_Click);
-			this.ClosePicture.MouseEnter += new System.EventHandler(this.ClosePicture_MouseEnter);
-			this.ClosePicture.MouseLeave += new System.EventHandler(this.ClosePicture_MouseLeave);
+			this.LogInClosePicture.BackColor = System.Drawing.Color.Transparent;
+			this.LogInClosePicture.BackgroundImage = global::FakeQQ.Properties.Resources.Close;
+			this.LogInClosePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.LogInClosePicture.Location = new System.Drawing.Point(322, 0);
+			this.LogInClosePicture.Name = "LogInClosePicture";
+			this.LogInClosePicture.Size = new System.Drawing.Size(30, 30);
+			this.LogInClosePicture.TabIndex = 7;
+			this.LogInClosePicture.TabStop = false;
+			this.LogInClosePicture.Click += new System.EventHandler(this.ClosePicture_Click);
+			this.LogInClosePicture.MouseEnter += new System.EventHandler(this.ClosePicture_MouseEnter);
+			this.LogInClosePicture.MouseLeave += new System.EventHandler(this.ClosePicture_MouseLeave);
 			// 
-			// BackgroundPicture
+			// LogInBackgroundPicture
 			// 
-			this.BackgroundPicture.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.BackgroundPicture.Image = global::FakeQQ.Properties.Resources.mainWindowBackground;
-			this.BackgroundPicture.Location = new System.Drawing.Point(0, 0);
-			this.BackgroundPicture.Name = "BackgroundPicture";
-			this.BackgroundPicture.Size = new System.Drawing.Size(352, 450);
-			this.BackgroundPicture.TabIndex = 0;
-			this.BackgroundPicture.TabStop = false;
-			this.BackgroundPicture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseDown);
-			this.BackgroundPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseMove);
-			this.BackgroundPicture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseUp);
+			this.LogInBackgroundPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.LogInBackgroundPicture.Image = global::FakeQQ.Properties.Resources.mainWindowBackground;
+			this.LogInBackgroundPicture.Location = new System.Drawing.Point(0, 0);
+			this.LogInBackgroundPicture.Name = "LogInBackgroundPicture";
+			this.LogInBackgroundPicture.Size = new System.Drawing.Size(352, 450);
+			this.LogInBackgroundPicture.TabIndex = 0;
+			this.LogInBackgroundPicture.TabStop = false;
+			this.LogInBackgroundPicture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseDown);
+			this.LogInBackgroundPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseMove);
+			this.LogInBackgroundPicture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseUp);
 			// 
 			// AccountPanel
 			// 
 			this.AccountPanel.BackColor = System.Drawing.Color.White;
 			this.AccountPanel.Controls.Add(this.AccountClosePicture);
-			this.AccountPanel.Location = new System.Drawing.Point(41, 163);
+			this.AccountPanel.Controls.Add(this.AccountTextBox);
+			this.AccountPanel.Location = new System.Drawing.Point(41, 150);
 			this.AccountPanel.Name = "AccountPanel";
 			this.AccountPanel.Size = new System.Drawing.Size(270, 44);
 			this.AccountPanel.TabIndex = 8;
-			// 
-			// PasswordPanel
-			// 
-			this.PasswordPanel.BackColor = System.Drawing.Color.White;
-			this.PasswordPanel.Controls.Add(this.PasswordClosePicture);
-			this.PasswordPanel.Location = new System.Drawing.Point(41, 219);
-			this.PasswordPanel.Name = "PasswordPanel";
-			this.PasswordPanel.Size = new System.Drawing.Size(270, 44);
-			this.PasswordPanel.TabIndex = 9;
-			// 
-			// LoginButton
-			// 
-			this.LoginButton.BackColor = System.Drawing.Color.NavajoWhite;
-			this.LoginButton.FlatAppearance.BorderColor = System.Drawing.Color.NavajoWhite;
-			this.LoginButton.FlatAppearance.BorderSize = 0;
-			this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.LoginButton.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.LoginButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-			this.LoginButton.Location = new System.Drawing.Point(41, 324);
-			this.LoginButton.Name = "LoginButton";
-			this.LoginButton.Size = new System.Drawing.Size(270, 44);
-			this.LoginButton.TabIndex = 10;
-			this.LoginButton.Text = "登录";
-			this.LoginButton.UseVisualStyleBackColor = false;
-			this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
-			// 
-			// PasswordTextBox
-			// 
-			this.PasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.PasswordTextBox.Cue = null;
-			this.PasswordTextBox.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.PasswordTextBox.Location = new System.Drawing.Point(96, 232);
-			this.PasswordTextBox.Name = "PasswordTextBox";
-			this.PasswordTextBox.Size = new System.Drawing.Size(160, 19);
-			this.PasswordTextBox.TabIndex = 4;
-			this.PasswordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.PasswordTextBox.UseSystemPasswordChar = true;
-			// 
-			// AccountTextBox
-			// 
-			this.AccountTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.AccountTextBox.Cue = null;
-			this.AccountTextBox.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.AccountTextBox.Location = new System.Drawing.Point(96, 175);
-			this.AccountTextBox.Name = "AccountTextBox";
-			this.AccountTextBox.Size = new System.Drawing.Size(160, 19);
-			this.AccountTextBox.TabIndex = 4;
-			this.AccountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// HeadImagePicture
-			// 
-			this.HeadImagePicture.BackColor = System.Drawing.Color.Transparent;
-			this.HeadImagePicture.BackgroundImage = global::FakeQQ.Properties.Resources.logo;
-			this.HeadImagePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.HeadImagePicture.Location = new System.Drawing.Point(136, 64);
-			this.HeadImagePicture.Name = "HeadImagePicture";
-			this.HeadImagePicture.Size = new System.Drawing.Size(80, 80);
-			this.HeadImagePicture.TabIndex = 2;
-			this.HeadImagePicture.TabStop = false;
 			// 
 			// AccountClosePicture
 			// 
@@ -154,6 +117,16 @@
 			this.AccountClosePicture.TabStop = false;
 			this.AccountClosePicture.Click += new System.EventHandler(this.AccountClosePicture_Click);
 			// 
+			// PasswordPanel
+			// 
+			this.PasswordPanel.BackColor = System.Drawing.Color.White;
+			this.PasswordPanel.Controls.Add(this.PasswordTextBox);
+			this.PasswordPanel.Controls.Add(this.PasswordClosePicture);
+			this.PasswordPanel.Location = new System.Drawing.Point(41, 224);
+			this.PasswordPanel.Name = "PasswordPanel";
+			this.PasswordPanel.Size = new System.Drawing.Size(270, 44);
+			this.PasswordPanel.TabIndex = 9;
+			// 
 			// PasswordClosePicture
 			// 
 			this.PasswordClosePicture.BackgroundImage = global::FakeQQ.Properties.Resources.Close;
@@ -165,49 +138,288 @@
 			this.PasswordClosePicture.TabStop = false;
 			this.PasswordClosePicture.Click += new System.EventHandler(this.PasswordClosePicture_Click);
 			// 
-			// MainWindow
+			// LogUpPhonePanel
+			// 
+			this.LogUpPhonePanel.BackColor = System.Drawing.Color.White;
+			this.LogUpPhonePanel.Controls.Add(this.LogUpPhoneTextBox);
+			this.LogUpPhonePanel.Location = new System.Drawing.Point(41, 220);
+			this.LogUpPhonePanel.Name = "LogUpPhonePanel";
+			this.LogUpPhonePanel.Size = new System.Drawing.Size(270, 44);
+			this.LogUpPhonePanel.TabIndex = 12;
+			// 
+			// LogInButton
+			// 
+			this.LogInButton.BackColor = System.Drawing.Color.NavajoWhite;
+			this.LogInButton.FlatAppearance.BorderColor = System.Drawing.Color.NavajoWhite;
+			this.LogInButton.FlatAppearance.BorderSize = 0;
+			this.LogInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.LogInButton.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.LogInButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+			this.LogInButton.Location = new System.Drawing.Point(41, 324);
+			this.LogInButton.Name = "LogInButton";
+			this.LogInButton.Size = new System.Drawing.Size(270, 44);
+			this.LogInButton.TabIndex = 10;
+			this.LogInButton.Text = "登录";
+			this.LogInButton.UseVisualStyleBackColor = false;
+			this.LogInButton.Click += new System.EventHandler(this.LoginButton_Click);
+			// 
+			// LogUpLabel
+			// 
+			this.LogUpLabel.AutoSize = true;
+			this.LogUpLabel.BackColor = System.Drawing.Color.Transparent;
+			this.LogUpLabel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.LogUpLabel.ForeColor = System.Drawing.Color.SaddleBrown;
+			this.LogUpLabel.Location = new System.Drawing.Point(246, 394);
+			this.LogUpLabel.Name = "LogUpLabel";
+			this.LogUpLabel.Size = new System.Drawing.Size(65, 19);
+			this.LogUpLabel.TabIndex = 11;
+			this.LogUpLabel.Text = "注册账号";
+			this.LogUpLabel.Click += new System.EventHandler(this.LogUpLabel_Click);
+			// 
+			// LogUpUsernamePanel
+			// 
+			this.LogUpUsernamePanel.BackColor = System.Drawing.Color.White;
+			this.LogUpUsernamePanel.Controls.Add(this.LogUpUsernameTextBox);
+			this.LogUpUsernamePanel.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.LogUpUsernamePanel.Location = new System.Drawing.Point(41, 100);
+			this.LogUpUsernamePanel.Name = "LogUpUsernamePanel";
+			this.LogUpUsernamePanel.Size = new System.Drawing.Size(270, 44);
+			this.LogUpUsernamePanel.TabIndex = 12;
+			// 
+			// LogUpPasswordPanel
+			// 
+			this.LogUpPasswordPanel.BackColor = System.Drawing.Color.White;
+			this.LogUpPasswordPanel.Controls.Add(this.LogUpPasswordTextBox);
+			this.LogUpPasswordPanel.Location = new System.Drawing.Point(41, 160);
+			this.LogUpPasswordPanel.Name = "LogUpPasswordPanel";
+			this.LogUpPasswordPanel.Size = new System.Drawing.Size(270, 44);
+			this.LogUpPasswordPanel.TabIndex = 12;
+			// 
+			// LogUpButton
+			// 
+			this.LogUpButton.BackColor = System.Drawing.Color.NavajoWhite;
+			this.LogUpButton.FlatAppearance.BorderColor = System.Drawing.Color.NavajoWhite;
+			this.LogUpButton.FlatAppearance.BorderSize = 0;
+			this.LogUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.LogUpButton.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.LogUpButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+			this.LogUpButton.Location = new System.Drawing.Point(41, 324);
+			this.LogUpButton.Name = "LogUpButton";
+			this.LogUpButton.Size = new System.Drawing.Size(270, 44);
+			this.LogUpButton.TabIndex = 10;
+			this.LogUpButton.Text = "注册";
+			this.LogUpButton.UseVisualStyleBackColor = false;
+			// 
+			// LogInLabel
+			// 
+			this.LogInLabel.AutoSize = true;
+			this.LogInLabel.BackColor = System.Drawing.Color.Transparent;
+			this.LogInLabel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.LogInLabel.ForeColor = System.Drawing.Color.SaddleBrown;
+			this.LogInLabel.Location = new System.Drawing.Point(246, 394);
+			this.LogInLabel.Name = "LogInLabel";
+			this.LogInLabel.Size = new System.Drawing.Size(65, 19);
+			this.LogInLabel.TabIndex = 11;
+			this.LogInLabel.Text = "登录账号";
+			this.LogInLabel.Click += new System.EventHandler(this.LogInLabel_Click);
+			// 
+			// LogInPanel
+			// 
+			this.LogInPanel.Controls.Add(this.PasswordPanel);
+			this.LogInPanel.Controls.Add(this.HeadImagePicture);
+			this.LogInPanel.Controls.Add(this.LogUpLabel);
+			this.LogInPanel.Controls.Add(this.LogInButton);
+			this.LogInPanel.Controls.Add(this.AccountPanel);
+			this.LogInPanel.Controls.Add(this.LogInClosePicture);
+			this.LogInPanel.Controls.Add(this.LogInBackgroundPicture);
+			this.LogInPanel.Location = new System.Drawing.Point(0, 0);
+			this.LogInPanel.Name = "LogInPanel";
+			this.LogInPanel.Size = new System.Drawing.Size(352, 450);
+			this.LogInPanel.TabIndex = 13;
+			// 
+			// LogUpPanel
+			// 
+			this.LogUpPanel.Controls.Add(this.WelcomeLogUpLabel);
+			this.LogUpPanel.Controls.Add(this.LogInLabel);
+			this.LogUpPanel.Controls.Add(this.LogUpButton);
+			this.LogUpPanel.Controls.Add(this.LogUpPhonePanel);
+			this.LogUpPanel.Controls.Add(this.LogUpPasswordPanel);
+			this.LogUpPanel.Controls.Add(this.LogUpUsernamePanel);
+			this.LogUpPanel.Controls.Add(this.LogUpClosePicture);
+			this.LogUpPanel.Controls.Add(this.LogUpBackgroundPicture);
+			this.LogUpPanel.Location = new System.Drawing.Point(0, 0);
+			this.LogUpPanel.Name = "LogUpPanel";
+			this.LogUpPanel.Size = new System.Drawing.Size(352, 450);
+			this.LogUpPanel.TabIndex = 0;
+			// 
+			// HeadImagePicture
+			// 
+			this.HeadImagePicture.BackColor = System.Drawing.Color.Transparent;
+			this.HeadImagePicture.BackgroundImage = global::FakeQQ.Properties.Resources.logo;
+			this.HeadImagePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.HeadImagePicture.Location = new System.Drawing.Point(136, 64);
+			this.HeadImagePicture.Name = "HeadImagePicture";
+			this.HeadImagePicture.Size = new System.Drawing.Size(80, 80);
+			this.HeadImagePicture.TabIndex = 2;
+			this.HeadImagePicture.TabStop = false;
+			// 
+			// PasswordTextBox
+			// 
+			this.PasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.PasswordTextBox.Cue = null;
+			this.PasswordTextBox.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.PasswordTextBox.Location = new System.Drawing.Point(55, 13);
+			this.PasswordTextBox.Name = "PasswordTextBox";
+			this.PasswordTextBox.Size = new System.Drawing.Size(160, 19);
+			this.PasswordTextBox.TabIndex = 4;
+			this.PasswordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.PasswordTextBox.UseSystemPasswordChar = true;
+			// 
+			// AccountTextBox
+			// 
+			this.AccountTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.AccountTextBox.Cue = null;
+			this.AccountTextBox.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.AccountTextBox.Location = new System.Drawing.Point(55, 12);
+			this.AccountTextBox.Name = "AccountTextBox";
+			this.AccountTextBox.Size = new System.Drawing.Size(160, 19);
+			this.AccountTextBox.TabIndex = 4;
+			this.AccountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// LogUpPhoneTextBox
+			// 
+			this.LogUpPhoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.LogUpPhoneTextBox.Cue = null;
+			this.LogUpPhoneTextBox.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.LogUpPhoneTextBox.Location = new System.Drawing.Point(55, 13);
+			this.LogUpPhoneTextBox.Name = "LogUpPhoneTextBox";
+			this.LogUpPhoneTextBox.Size = new System.Drawing.Size(160, 19);
+			this.LogUpPhoneTextBox.TabIndex = 5;
+			this.LogUpPhoneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.LogUpPhoneTextBox.UseSystemPasswordChar = true;
+			// 
+			// LogUpPasswordTextBox
+			// 
+			this.LogUpPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.LogUpPasswordTextBox.Cue = null;
+			this.LogUpPasswordTextBox.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.LogUpPasswordTextBox.Location = new System.Drawing.Point(55, 13);
+			this.LogUpPasswordTextBox.Name = "LogUpPasswordTextBox";
+			this.LogUpPasswordTextBox.Size = new System.Drawing.Size(160, 19);
+			this.LogUpPasswordTextBox.TabIndex = 5;
+			this.LogUpPasswordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.LogUpPasswordTextBox.UseSystemPasswordChar = true;
+			// 
+			// LogUpUsernameTextBox
+			// 
+			this.LogUpUsernameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.LogUpUsernameTextBox.Cue = null;
+			this.LogUpUsernameTextBox.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.LogUpUsernameTextBox.Location = new System.Drawing.Point(55, 13);
+			this.LogUpUsernameTextBox.Name = "LogUpUsernameTextBox";
+			this.LogUpUsernameTextBox.Size = new System.Drawing.Size(160, 19);
+			this.LogUpUsernameTextBox.TabIndex = 5;
+			this.LogUpUsernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// LogUpBackgroundPicture
+			// 
+			this.LogUpBackgroundPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.LogUpBackgroundPicture.Image = global::FakeQQ.Properties.Resources.mainWindowBackground;
+			this.LogUpBackgroundPicture.Location = new System.Drawing.Point(0, 0);
+			this.LogUpBackgroundPicture.Name = "LogUpBackgroundPicture";
+			this.LogUpBackgroundPicture.Size = new System.Drawing.Size(352, 450);
+			this.LogUpBackgroundPicture.TabIndex = 13;
+			this.LogUpBackgroundPicture.TabStop = false;
+			// 
+			// LogUpClosePicture
+			// 
+			this.LogUpClosePicture.BackColor = System.Drawing.Color.Transparent;
+			this.LogUpClosePicture.BackgroundImage = global::FakeQQ.Properties.Resources.Close;
+			this.LogUpClosePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.LogUpClosePicture.Location = new System.Drawing.Point(322, 0);
+			this.LogUpClosePicture.Name = "LogUpClosePicture";
+			this.LogUpClosePicture.Size = new System.Drawing.Size(30, 30);
+			this.LogUpClosePicture.TabIndex = 14;
+			this.LogUpClosePicture.TabStop = false;
+			this.LogUpClosePicture.Click += new System.EventHandler(this.ClosePicture_Click);
+			this.LogUpClosePicture.MouseEnter += new System.EventHandler(this.ClosePicture_MouseEnter);
+			this.LogUpClosePicture.MouseLeave += new System.EventHandler(this.ClosePicture_MouseLeave);
+			// 
+			// WelcomeLogUpLabel
+			// 
+			this.WelcomeLogUpLabel.AutoSize = true;
+			this.WelcomeLogUpLabel.BackColor = System.Drawing.Color.Transparent;
+			this.WelcomeLogUpLabel.Font = new System.Drawing.Font("微软雅黑 Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.WelcomeLogUpLabel.Location = new System.Drawing.Point(41, 36);
+			this.WelcomeLogUpLabel.Name = "WelcomeLogUpLabel";
+			this.WelcomeLogUpLabel.Size = new System.Drawing.Size(218, 46);
+			this.WelcomeLogUpLabel.TabIndex = 12;
+			this.WelcomeLogUpLabel.Text = "欢迎注册QQ";
+			// 
+			// LogForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.ClientSize = new System.Drawing.Size(352, 450);
-			this.Controls.Add(this.LoginButton);
-			this.Controls.Add(this.PasswordPanel);
-			this.Controls.Add(this.AccountPanel);
-			this.Controls.Add(this.ClosePicture);
-			this.Controls.Add(this.PasswordTextBox);
-			this.Controls.Add(this.AccountTextBox);
-			this.Controls.Add(this.HeadImagePicture);
-			this.Controls.Add(this.BackgroundPicture);
+			this.Controls.Add(this.LogInPanel);
+			this.Controls.Add(this.LogUpPanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "MainWindow";
+			this.Name = "LogForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Load += new System.EventHandler(this.MainWindow_Load);
-			((System.ComponentModel.ISupportInitialize)(this.ClosePicture)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.BackgroundPicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogInClosePicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogInBackgroundPicture)).EndInit();
 			this.AccountPanel.ResumeLayout(false);
-			this.PasswordPanel.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.HeadImagePicture)).EndInit();
+			this.AccountPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.AccountClosePicture)).EndInit();
+			this.PasswordPanel.ResumeLayout(false);
+			this.PasswordPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.PasswordClosePicture)).EndInit();
+			this.LogUpPhonePanel.ResumeLayout(false);
+			this.LogUpPhonePanel.PerformLayout();
+			this.LogUpUsernamePanel.ResumeLayout(false);
+			this.LogUpUsernamePanel.PerformLayout();
+			this.LogUpPasswordPanel.ResumeLayout(false);
+			this.LogUpPasswordPanel.PerformLayout();
+			this.LogInPanel.ResumeLayout(false);
+			this.LogInPanel.PerformLayout();
+			this.LogUpPanel.ResumeLayout(false);
+			this.LogUpPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.HeadImagePicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogUpBackgroundPicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogUpClosePicture)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.PictureBox BackgroundPicture;
+		private System.Windows.Forms.PictureBox LogInBackgroundPicture;
 		private OvalPictureBox HeadImagePicture;
 		private CueTextBox AccountTextBox;
 		private CueTextBox PasswordTextBox;
-		private System.Windows.Forms.PictureBox ClosePicture;
+		private System.Windows.Forms.PictureBox LogInClosePicture;
 		private System.Windows.Forms.Panel AccountPanel;
 		private System.Windows.Forms.Panel PasswordPanel;
-		private System.Windows.Forms.Button LoginButton;
+		private System.Windows.Forms.Button LogInButton;
 		private System.Windows.Forms.PictureBox AccountClosePicture;
 		private System.Windows.Forms.PictureBox PasswordClosePicture;
+		private System.Windows.Forms.Label LogUpLabel;
+		private System.Windows.Forms.Panel LogUpUsernamePanel;
+		private System.Windows.Forms.Panel LogUpPasswordPanel;
+		private CueTextBox LogUpUsernameTextBox;
+		private CueTextBox LogUpPasswordTextBox;
+		private System.Windows.Forms.Button LogUpButton;
+		private System.Windows.Forms.Panel LogUpPhonePanel;
+		private CueTextBox LogUpPhoneTextBox;
+		private System.Windows.Forms.Label LogInLabel;
+		private System.Windows.Forms.Panel LogInPanel;
+		private System.Windows.Forms.Panel LogUpPanel;
+		private System.Windows.Forms.PictureBox LogUpBackgroundPicture;
+		private System.Windows.Forms.PictureBox LogUpClosePicture;
+		private System.Windows.Forms.Label WelcomeLogUpLabel;
 	}
 }
 
