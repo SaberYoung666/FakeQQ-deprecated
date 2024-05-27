@@ -64,7 +64,6 @@ namespace FakeQQ
         {
             ChatForm chatForm=new ChatForm();
             chatForm.ShowDialog(); 
-            throw new NotImplementedException();
         }
 
         private void PictureBox_Click(object sender, EventArgs e)
