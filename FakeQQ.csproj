@@ -134,5 +134,23 @@
   <ItemGroup>
     <None Include="Resources\minus.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_emoji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_doc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_image.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
