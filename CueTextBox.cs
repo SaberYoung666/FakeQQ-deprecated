@@ -16,13 +16,13 @@ class CueTextBox : TextBox
 	{
 		if (this.IsHandleCreated && mCue != null)
 		{
-			SendMessage(this.Handle, 0x1501, (IntPtr)1, mCue);
+			SendMessage(this.Handle, 0x1501, (IntPtr)0, mCue);
 		}
 	}
 
 	private string mCue;
 
 	// PInvoke
-	[DllImport("user32.dll", CharSet = CharSet.Unicode)]
+	[DllImport("user32.dll", CharSet = CharSet.Auto)]
 	private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wp, string lp);
 }
