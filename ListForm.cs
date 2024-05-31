@@ -63,7 +63,7 @@ namespace FakeQQ
         private void PictureBox_DoubleClick(object sender, EventArgs e)
         {
             ChatForm chatForm=new ChatForm();
-            chatForm.ShowDialog(); 
+            chatForm.Show(); 
         }
 
         private void PictureBox_Click(object sender, EventArgs e)
