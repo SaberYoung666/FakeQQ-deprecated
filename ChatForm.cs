@@ -30,32 +30,20 @@ namespace FakeQQ
         {
             if (click_count == 1)
             {
-                init_location=new Point(this.Width-50,20);//首消息位置
+                init_location=new Point(messageArea.Width-50,20);//首消息位置
             }
-            if (type == btn_type.text || type == btn_type.document)
-            {
-                PictureBox userAvatar = new PictureBox();
-                RichTextBox message = new RichTextBox();
-                set_message(message, init_location);
-                set_userAvatar(userAvatar, init_location);
-                messageArea.Controls.Add(userAvatar);
-                messageArea.Controls.Add(message);
-                messageArea.ScrollControlIntoView(userAvatar);
-                messageArea.ScrollControlIntoView(message);
-            }
-            else if (type == btn_type.image)
-            {
-                MessageBox.Show(imageURL);
-                PictureBox userAvatar = new PictureBox();
-                PictureBox imageMessage = new PictureBox();
-                set_userAvatar(userAvatar, init_location);
-                set_imageMessage(imageMessage, init_location);
-                messageArea.Controls.Add(userAvatar);
-                messageArea.Controls.Add(imageMessage);
-                messageArea.ScrollControlIntoView(userAvatar);
-                messageArea.ScrollControlIntoView(imageMessage);
-            }
+            PictureBox userAvatar = new PictureBox();
+            RichTextBox message = new RichTextBox();
+            set_userAvatar(userAvatar, init_location);
+            set_message(message, init_location);
+            messageArea.Controls.Add(userAvatar);
+            messageArea.Controls.Add(message);
+            messageArea.ScrollControlIntoView(userAvatar);
+            messageArea.ScrollControlIntoView(message);
             click_count+=1;
+            richTextBox_content.Clear();
+            richTextBox_content.Focus();
+            type = btn_type.text;
         }//动态添加聊天框
         private void set_userAvatar(PictureBox userAvatar,Point location)
         {
@@ -68,23 +56,35 @@ namespace FakeQQ
 
         private void set_message(RichTextBox message,Point location)
         {
-                message.Text = textBox_content;
+            if (type == btn_type.text)
+            {
                 message.Width = 200;
+                message.Text = textBox_content;
                 message.BackColor = Color.White;
                 message.BorderStyle = BorderStyle.None;
                 message.ContentsResized += Message_ContentsResized;
-                message.Location = new Point(init_location.X - 210, init_location.Y + 5);
-                message.ReadOnly = true; 
+                message.Location = new Point(init_location.X - message.Width-20, init_location.Y + 5);
+                message.ReadOnly = true;
+            }
+            else if (type == btn_type.image)
+            {
+                message.Width = 200;
+                message.BorderStyle= BorderStyle.None;
+                message.Location = new Point(init_location.X - message.Width-20, init_location.Y + 5);
+                message.ContentsResized += Message_ContentsResized;
+                message.Paste();
+            }
+            else if(type == btn_type.document)
+            {
+                message.Width = 200;
+                message.BorderStyle = BorderStyle.None;
+                message.Location = new Point(init_location.X - message.Width - 20, init_location.Y + 5);
+                message.ContentsResized += Message_ContentsResized;
+                message.Paste();
+            }
+            
         }//设置消息框属性
 
-        private void set_imageMessage(PictureBox imageMessage,Point location)
-        {
-            imageMessage.Location = init_location;
-            imageMessage.ImageLocation = imageURL;
-            imageMessage.SizeMode = PictureBoxSizeMode.AutoSize;
-            imageMessage.Location = new Point(init_location.X - imageMessage.Width- 250, init_location.Y + 5);
-
-        }//设置图片消息属性
 
         private void Message_ContentsResized(object sender, ContentsResizedEventArgs e)
         {
@@ -109,8 +109,6 @@ namespace FakeQQ
                 is_changed= true;
                 btn_send.Enabled = true;
             }
-
-            
         }
 
         private void picture_close_Click(object sender, EventArgs e)
@@ -172,7 +170,6 @@ namespace FakeQQ
         }//如果左键松开就不移动
         private enum btn_type {text,document,emoji,image }//枚举按钮类型
         btn_type type = btn_type.text;
-        private string imageURL;
         private void picture_doc_Click(object sender, EventArgs e)
         {
             type= btn_type.document;
@@ -182,7 +179,11 @@ namespace FakeQQ
             if (openDocumentDialog.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show(openDocumentDialog.FileName);
-                richTextBox_content.LoadFile(openDocumentDialog.FileName, RichTextBoxStreamType.PlainText);
+                Clipboard.Clear();   //清空剪贴板
+                System.Collections.Specialized.StringCollection files = new System.Collections.Specialized.StringCollection();
+                files.Add(openDocumentDialog.FileName);
+                Clipboard.SetFileDropList(files);
+                richTextBox_content.Paste();   //将剪贴板中的对象粘贴到对话框里
             }
         }
 
@@ -199,8 +200,7 @@ namespace FakeQQ
             openImageFileDialog.Multiselect = false;
             if (openImageFileDialog.ShowDialog() == DialogResult.OK)
             {
-                imageURL = openImageFileDialog.FileName;
-                MessageBox.Show(imageURL);
+                MessageBox.Show(openImageFileDialog.FileName);
                 Clipboard.Clear();   //清空剪贴板
                 Bitmap bmp = new Bitmap(openImageFileDialog.FileName);  //创建Bitmap类对象
                 Clipboard.SetImage(bmp);  //将Bitmap类对象写入剪贴板
