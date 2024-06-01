@@ -61,6 +61,9 @@
             this.navigation_bar.Name = "navigation_bar";
             this.navigation_bar.Size = new System.Drawing.Size(739, 48);
             this.navigation_bar.TabIndex = 0;
+            this.navigation_bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.navigation_bar_MouseDown);
+            this.navigation_bar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.navigation_bar_MouseMove);
+            this.navigation_bar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.navigation_bar_MouseUp);
             // 
             // picture_close
             // 
@@ -119,6 +122,7 @@
             this.picture_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picture_image.TabIndex = 2;
             this.picture_image.TabStop = false;
+            this.picture_image.Click += new System.EventHandler(this.picture_image_Click);
             // 
             // picture_doc
             // 
@@ -128,6 +132,7 @@
             this.picture_doc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picture_doc.TabIndex = 4;
             this.picture_doc.TabStop = false;
+            this.picture_doc.Click += new System.EventHandler(this.picture_doc_Click);
             // 
             // picture_emoji
             // 
@@ -137,9 +142,11 @@
             this.picture_emoji.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picture_emoji.TabIndex = 5;
             this.picture_emoji.TabStop = false;
+            this.picture_emoji.Click += new System.EventHandler(this.picture_emoji_Click);
             // 
             // btn_send
             // 
+            this.btn_send.Enabled = false;
             this.btn_send.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_send.Location = new System.Drawing.Point(631, 185);
             this.btn_send.Name = "btn_send";
