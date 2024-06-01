@@ -64,7 +64,6 @@
             // 
             // picture_close
             // 
-            this.picture_close.Image = global::FakeQQ.Properties.Resources.icon_close;
             this.picture_close.Location = new System.Drawing.Point(676, 4);
             this.picture_close.Name = "picture_close";
             this.picture_close.Size = new System.Drawing.Size(30, 30);
@@ -77,7 +76,6 @@
             // 
             // picture_minus
             // 
-            this.picture_minus.Image = global::FakeQQ.Properties.Resources.Icon_minus;
             this.picture_minus.Location = new System.Drawing.Point(614, 4);
             this.picture_minus.Name = "picture_minus";
             this.picture_minus.Size = new System.Drawing.Size(30, 30);
@@ -115,7 +113,6 @@
             // 
             // picture_image
             // 
-            this.picture_image.Image = global::FakeQQ.Properties.Resources.icon_image;
             this.picture_image.Location = new System.Drawing.Point(130, 3);
             this.picture_image.Name = "picture_image";
             this.picture_image.Size = new System.Drawing.Size(30, 30);
@@ -125,7 +122,6 @@
             // 
             // picture_doc
             // 
-            this.picture_doc.Image = global::FakeQQ.Properties.Resources.icon_doc;
             this.picture_doc.Location = new System.Drawing.Point(75, 3);
             this.picture_doc.Name = "picture_doc";
             this.picture_doc.Size = new System.Drawing.Size(30, 30);
@@ -135,7 +131,6 @@
             // 
             // picture_emoji
             // 
-            this.picture_emoji.Image = global::FakeQQ.Properties.Resources.icon_emoji;
             this.picture_emoji.Location = new System.Drawing.Point(20, 3);
             this.picture_emoji.Name = "picture_emoji";
             this.picture_emoji.Size = new System.Drawing.Size(30, 30);

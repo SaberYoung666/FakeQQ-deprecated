@@ -30,18 +30,12 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogForm));
-			this.LogInClosePicture = new System.Windows.Forms.PictureBox();
-			this.LogInBackgroundPicture = new System.Windows.Forms.PictureBox();
 			this.AccountPanel = new System.Windows.Forms.Panel();
-			this.AccountClosePicture = new System.Windows.Forms.PictureBox();
 			this.PasswordPanel = new System.Windows.Forms.Panel();
-			this.PasswordClosePicture = new System.Windows.Forms.PictureBox();
 			this.LogUpPhonePanel = new System.Windows.Forms.Panel();
 			this.LogUpLabel = new System.Windows.Forms.Label();
 			this.LogUpUsernamePanel = new System.Windows.Forms.Panel();
-			this.UsernameIndicatorPictureBox = new System.Windows.Forms.PictureBox();
 			this.LogUpPasswordPanel = new System.Windows.Forms.Panel();
-			this.PasswordIndicatorPictureBox = new System.Windows.Forms.PictureBox();
 			this.LogUpButton = new System.Windows.Forms.Button();
 			this.LogInLabel = new System.Windows.Forms.Label();
 			this.LogInPanel = new System.Windows.Forms.Panel();
@@ -49,12 +43,18 @@
 			this.LogUpPanel = new System.Windows.Forms.Panel();
 			this.WelcomeLogUpLabel = new System.Windows.Forms.Label();
 			this.LogUpCheckPasswordPanel = new System.Windows.Forms.Panel();
-			this.CheckPasswordIndicatorPictureBox = new System.Windows.Forms.PictureBox();
-			this.LogUpBackgroundPicture = new System.Windows.Forms.PictureBox();
-			this.LogUpClosePicture = new System.Windows.Forms.PictureBox();
 			this.MonitorLogInTextBoxTimer = new System.Windows.Forms.Timer(this.components);
 			this.FocusedTimer = new System.Windows.Forms.Timer(this.components);
 			this.MonitorLogUpTextBoxTimer = new System.Windows.Forms.Timer(this.components);
+			this.PasswordClosePicture = new System.Windows.Forms.PictureBox();
+			this.AccountClosePicture = new System.Windows.Forms.PictureBox();
+			this.LogInClosePicture = new System.Windows.Forms.PictureBox();
+			this.LogInBackgroundPicture = new System.Windows.Forms.PictureBox();
+			this.UsernameIndicatorPictureBox = new System.Windows.Forms.PictureBox();
+			this.PasswordIndicatorPictureBox = new System.Windows.Forms.PictureBox();
+			this.CheckPasswordIndicatorPictureBox = new System.Windows.Forms.PictureBox();
+			this.LogUpBackgroundPicture = new System.Windows.Forms.PictureBox();
+			this.LogUpClosePicture = new System.Windows.Forms.PictureBox();
 			this.PasswordTextBox = new CueTextBox();
 			this.HeadImagePicture = new OvalPictureBox();
 			this.AccountTextBox = new CueTextBox();
@@ -62,52 +62,25 @@
 			this.LogUpPasswordTextBox = new CueTextBox();
 			this.LogUpCheckPasswordTextBox = new CueTextBox();
 			this.LogUpPhoneTextBox = new CueTextBox();
-			((System.ComponentModel.ISupportInitialize)(this.LogInClosePicture)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.LogInBackgroundPicture)).BeginInit();
 			this.AccountPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.AccountClosePicture)).BeginInit();
 			this.PasswordPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.PasswordClosePicture)).BeginInit();
 			this.LogUpPhonePanel.SuspendLayout();
 			this.LogUpUsernamePanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.UsernameIndicatorPictureBox)).BeginInit();
 			this.LogUpPasswordPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.PasswordIndicatorPictureBox)).BeginInit();
 			this.LogInPanel.SuspendLayout();
 			this.LogUpPanel.SuspendLayout();
 			this.LogUpCheckPasswordPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.PasswordClosePicture)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.AccountClosePicture)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogInClosePicture)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogInBackgroundPicture)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.UsernameIndicatorPictureBox)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.PasswordIndicatorPictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.CheckPasswordIndicatorPictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.LogUpBackgroundPicture)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.LogUpClosePicture)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.HeadImagePicture)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// LogInClosePicture
-			// 
-			this.LogInClosePicture.BackColor = System.Drawing.Color.Transparent;
-			this.LogInClosePicture.BackgroundImage = global::FakeQQ.Properties.Resources.Close;
-			this.LogInClosePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.LogInClosePicture.Location = new System.Drawing.Point(322, 0);
-			this.LogInClosePicture.Name = "LogInClosePicture";
-			this.LogInClosePicture.Size = new System.Drawing.Size(30, 30);
-			this.LogInClosePicture.TabIndex = 7;
-			this.LogInClosePicture.TabStop = false;
-			this.LogInClosePicture.Click += new System.EventHandler(this.ClosePicture_Click);
-			this.LogInClosePicture.MouseEnter += new System.EventHandler(this.ClosePicture_MouseEnter);
-			this.LogInClosePicture.MouseLeave += new System.EventHandler(this.ClosePicture_MouseLeave);
-			// 
-			// LogInBackgroundPicture
-			// 
-			this.LogInBackgroundPicture.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.LogInBackgroundPicture.Image = global::FakeQQ.Properties.Resources.mainWindowBackground;
-			this.LogInBackgroundPicture.Location = new System.Drawing.Point(0, 0);
-			this.LogInBackgroundPicture.Name = "LogInBackgroundPicture";
-			this.LogInBackgroundPicture.Size = new System.Drawing.Size(352, 450);
-			this.LogInBackgroundPicture.TabIndex = 0;
-			this.LogInBackgroundPicture.TabStop = false;
-			this.LogInBackgroundPicture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseDown);
-			this.LogInBackgroundPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseMove);
-			this.LogInBackgroundPicture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseUp);
 			// 
 			// AccountPanel
 			// 
@@ -119,18 +92,6 @@
 			this.AccountPanel.Size = new System.Drawing.Size(270, 44);
 			this.AccountPanel.TabIndex = 8;
 			// 
-			// AccountClosePicture
-			// 
-			this.AccountClosePicture.BackgroundImage = global::FakeQQ.Properties.Resources.Close;
-			this.AccountClosePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.AccountClosePicture.Location = new System.Drawing.Point(240, 13);
-			this.AccountClosePicture.Name = "AccountClosePicture";
-			this.AccountClosePicture.Size = new System.Drawing.Size(19, 19);
-			this.AccountClosePicture.TabIndex = 0;
-			this.AccountClosePicture.TabStop = false;
-			this.AccountClosePicture.Visible = false;
-			this.AccountClosePicture.Click += new System.EventHandler(this.ClearPicture_Click);
-			// 
 			// PasswordPanel
 			// 
 			this.PasswordPanel.BackColor = System.Drawing.Color.White;
@@ -140,18 +101,6 @@
 			this.PasswordPanel.Name = "PasswordPanel";
 			this.PasswordPanel.Size = new System.Drawing.Size(270, 44);
 			this.PasswordPanel.TabIndex = 9;
-			// 
-			// PasswordClosePicture
-			// 
-			this.PasswordClosePicture.BackgroundImage = global::FakeQQ.Properties.Resources.Close;
-			this.PasswordClosePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.PasswordClosePicture.Location = new System.Drawing.Point(240, 13);
-			this.PasswordClosePicture.Name = "PasswordClosePicture";
-			this.PasswordClosePicture.Size = new System.Drawing.Size(19, 19);
-			this.PasswordClosePicture.TabIndex = 0;
-			this.PasswordClosePicture.TabStop = false;
-			this.PasswordClosePicture.Visible = false;
-			this.PasswordClosePicture.Click += new System.EventHandler(this.ClearPicture_Click);
 			// 
 			// LogUpPhonePanel
 			// 
@@ -186,17 +135,6 @@
 			this.LogUpUsernamePanel.Size = new System.Drawing.Size(270, 44);
 			this.LogUpUsernamePanel.TabIndex = 20;
 			// 
-			// UsernameIndicatorPictureBox
-			// 
-			this.UsernameIndicatorPictureBox.BackColor = System.Drawing.Color.Transparent;
-			this.UsernameIndicatorPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.UsernameIndicatorPictureBox.Location = new System.Drawing.Point(240, 13);
-			this.UsernameIndicatorPictureBox.Name = "UsernameIndicatorPictureBox";
-			this.UsernameIndicatorPictureBox.Size = new System.Drawing.Size(19, 19);
-			this.UsernameIndicatorPictureBox.TabIndex = 12;
-			this.UsernameIndicatorPictureBox.TabStop = false;
-			this.UsernameIndicatorPictureBox.Visible = false;
-			// 
 			// LogUpPasswordPanel
 			// 
 			this.LogUpPasswordPanel.BackColor = System.Drawing.Color.White;
@@ -206,18 +144,6 @@
 			this.LogUpPasswordPanel.Name = "LogUpPasswordPanel";
 			this.LogUpPasswordPanel.Size = new System.Drawing.Size(270, 44);
 			this.LogUpPasswordPanel.TabIndex = 20;
-			// 
-			// PasswordIndicatorPictureBox
-			// 
-			this.PasswordIndicatorPictureBox.BackColor = System.Drawing.Color.Transparent;
-			this.PasswordIndicatorPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.PasswordIndicatorPictureBox.Location = new System.Drawing.Point(240, 13);
-			this.PasswordIndicatorPictureBox.Name = "PasswordIndicatorPictureBox";
-			this.PasswordIndicatorPictureBox.Size = new System.Drawing.Size(19, 19);
-			this.PasswordIndicatorPictureBox.TabIndex = 13;
-			this.PasswordIndicatorPictureBox.TabStop = false;
-			this.PasswordIndicatorPictureBox.Visible = false;
-			this.PasswordIndicatorPictureBox.Validated += new System.EventHandler(this.PasswordIndicatorPictureBox_Validated);
 			// 
 			// LogUpButton
 			// 
@@ -315,6 +241,94 @@
 			this.LogUpCheckPasswordPanel.Size = new System.Drawing.Size(270, 44);
 			this.LogUpCheckPasswordPanel.TabIndex = 20;
 			// 
+			// MonitorLogInTextBoxTimer
+			// 
+			this.MonitorLogInTextBoxTimer.Enabled = true;
+			this.MonitorLogInTextBoxTimer.Tick += new System.EventHandler(this.MonitorTextBoxTimer_Tick);
+			// 
+			// FocusedTimer
+			// 
+			this.FocusedTimer.Enabled = true;
+			this.FocusedTimer.Tick += new System.EventHandler(this.FocusedTimer_Tick);
+			// 
+			// MonitorLogUpTextBoxTimer
+			// 
+			this.MonitorLogUpTextBoxTimer.Enabled = true;
+			this.MonitorLogUpTextBoxTimer.Tick += new System.EventHandler(this.MonitorLogUpTextBoxTimer_Tick);
+			// 
+			// PasswordClosePicture
+			// 
+			this.PasswordClosePicture.BackgroundImage = global::FakeQQ.Properties.Resources.Close;
+			this.PasswordClosePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.PasswordClosePicture.Location = new System.Drawing.Point(240, 13);
+			this.PasswordClosePicture.Name = "PasswordClosePicture";
+			this.PasswordClosePicture.Size = new System.Drawing.Size(19, 19);
+			this.PasswordClosePicture.TabIndex = 0;
+			this.PasswordClosePicture.TabStop = false;
+			this.PasswordClosePicture.Visible = false;
+			this.PasswordClosePicture.Click += new System.EventHandler(this.ClearPicture_Click);
+			// 
+			// AccountClosePicture
+			// 
+			this.AccountClosePicture.BackgroundImage = global::FakeQQ.Properties.Resources.Close;
+			this.AccountClosePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.AccountClosePicture.Location = new System.Drawing.Point(240, 13);
+			this.AccountClosePicture.Name = "AccountClosePicture";
+			this.AccountClosePicture.Size = new System.Drawing.Size(19, 19);
+			this.AccountClosePicture.TabIndex = 0;
+			this.AccountClosePicture.TabStop = false;
+			this.AccountClosePicture.Visible = false;
+			this.AccountClosePicture.Click += new System.EventHandler(this.ClearPicture_Click);
+			// 
+			// LogInClosePicture
+			// 
+			this.LogInClosePicture.BackColor = System.Drawing.Color.Transparent;
+			this.LogInClosePicture.BackgroundImage = global::FakeQQ.Properties.Resources.Close;
+			this.LogInClosePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.LogInClosePicture.Location = new System.Drawing.Point(322, 0);
+			this.LogInClosePicture.Name = "LogInClosePicture";
+			this.LogInClosePicture.Size = new System.Drawing.Size(30, 30);
+			this.LogInClosePicture.TabIndex = 7;
+			this.LogInClosePicture.TabStop = false;
+			this.LogInClosePicture.Click += new System.EventHandler(this.ClosePicture_Click);
+			this.LogInClosePicture.MouseEnter += new System.EventHandler(this.ClosePicture_MouseEnter);
+			this.LogInClosePicture.MouseLeave += new System.EventHandler(this.ClosePicture_MouseLeave);
+			// 
+			// LogInBackgroundPicture
+			// 
+			this.LogInBackgroundPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.LogInBackgroundPicture.Image = global::FakeQQ.Properties.Resources.mainWindowBackground;
+			this.LogInBackgroundPicture.Location = new System.Drawing.Point(0, 0);
+			this.LogInBackgroundPicture.Name = "LogInBackgroundPicture";
+			this.LogInBackgroundPicture.Size = new System.Drawing.Size(352, 450);
+			this.LogInBackgroundPicture.TabIndex = 0;
+			this.LogInBackgroundPicture.TabStop = false;
+			this.LogInBackgroundPicture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseDown);
+			this.LogInBackgroundPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseMove);
+			this.LogInBackgroundPicture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BackgroundPicture_MouseUp);
+			// 
+			// UsernameIndicatorPictureBox
+			// 
+			this.UsernameIndicatorPictureBox.BackColor = System.Drawing.Color.Transparent;
+			this.UsernameIndicatorPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.UsernameIndicatorPictureBox.Location = new System.Drawing.Point(240, 13);
+			this.UsernameIndicatorPictureBox.Name = "UsernameIndicatorPictureBox";
+			this.UsernameIndicatorPictureBox.Size = new System.Drawing.Size(19, 19);
+			this.UsernameIndicatorPictureBox.TabIndex = 12;
+			this.UsernameIndicatorPictureBox.TabStop = false;
+			this.UsernameIndicatorPictureBox.Visible = false;
+			// 
+			// PasswordIndicatorPictureBox
+			// 
+			this.PasswordIndicatorPictureBox.BackColor = System.Drawing.Color.Transparent;
+			this.PasswordIndicatorPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.PasswordIndicatorPictureBox.Location = new System.Drawing.Point(240, 13);
+			this.PasswordIndicatorPictureBox.Name = "PasswordIndicatorPictureBox";
+			this.PasswordIndicatorPictureBox.Size = new System.Drawing.Size(19, 19);
+			this.PasswordIndicatorPictureBox.TabIndex = 13;
+			this.PasswordIndicatorPictureBox.TabStop = false;
+			this.PasswordIndicatorPictureBox.Visible = false;
+			// 
 			// CheckPasswordIndicatorPictureBox
 			// 
 			this.CheckPasswordIndicatorPictureBox.BackColor = System.Drawing.Color.Transparent;
@@ -352,21 +366,6 @@
 			this.LogUpClosePicture.Click += new System.EventHandler(this.ClosePicture_Click);
 			this.LogUpClosePicture.MouseEnter += new System.EventHandler(this.ClosePicture_MouseEnter);
 			this.LogUpClosePicture.MouseLeave += new System.EventHandler(this.ClosePicture_MouseLeave);
-			// 
-			// MonitorLogInTextBoxTimer
-			// 
-			this.MonitorLogInTextBoxTimer.Enabled = true;
-			this.MonitorLogInTextBoxTimer.Tick += new System.EventHandler(this.MonitorTextBoxTimer_Tick);
-			// 
-			// FocusedTimer
-			// 
-			this.FocusedTimer.Enabled = true;
-			this.FocusedTimer.Tick += new System.EventHandler(this.FocusedTimer_Tick);
-			// 
-			// MonitorLogUpTextBoxTimer
-			// 
-			this.MonitorLogUpTextBoxTimer.Enabled = true;
-			this.MonitorLogUpTextBoxTimer.Tick += new System.EventHandler(this.MonitorLogUpTextBoxTimer_Tick);
 			// 
 			// PasswordTextBox
 			// 
@@ -429,6 +428,7 @@
 			this.LogUpPasswordTextBox.TabIndex = 7;
 			this.LogUpPasswordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.LogUpPasswordTextBox.UseSystemPasswordChar = true;
+			this.LogUpPasswordTextBox.Validated += new System.EventHandler(this.LogUpPasswordTextBox_Validated);
 			// 
 			// LogUpCheckPasswordTextBox
 			// 
@@ -442,6 +442,7 @@
 			this.LogUpCheckPasswordTextBox.TabIndex = 8;
 			this.LogUpCheckPasswordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.LogUpCheckPasswordTextBox.UseSystemPasswordChar = true;
+			this.LogUpCheckPasswordTextBox.Validated += new System.EventHandler(this.LogUpCheckPasswordTextBox_Validated);
 			// 
 			// LogUpPhoneTextBox
 			// 
@@ -468,28 +469,28 @@
 			this.Name = "LogForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Load += new System.EventHandler(this.MainWindow_Load);
-			((System.ComponentModel.ISupportInitialize)(this.LogInClosePicture)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.LogInBackgroundPicture)).EndInit();
 			this.AccountPanel.ResumeLayout(false);
 			this.AccountPanel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.AccountClosePicture)).EndInit();
 			this.PasswordPanel.ResumeLayout(false);
 			this.PasswordPanel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.PasswordClosePicture)).EndInit();
 			this.LogUpPhonePanel.ResumeLayout(false);
 			this.LogUpPhonePanel.PerformLayout();
 			this.LogUpUsernamePanel.ResumeLayout(false);
 			this.LogUpUsernamePanel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.UsernameIndicatorPictureBox)).EndInit();
 			this.LogUpPasswordPanel.ResumeLayout(false);
 			this.LogUpPasswordPanel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.PasswordIndicatorPictureBox)).EndInit();
 			this.LogInPanel.ResumeLayout(false);
 			this.LogInPanel.PerformLayout();
 			this.LogUpPanel.ResumeLayout(false);
 			this.LogUpPanel.PerformLayout();
 			this.LogUpCheckPasswordPanel.ResumeLayout(false);
 			this.LogUpCheckPasswordPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.PasswordClosePicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.AccountClosePicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogInClosePicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogInBackgroundPicture)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.UsernameIndicatorPictureBox)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.PasswordIndicatorPictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.CheckPasswordIndicatorPictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.LogUpBackgroundPicture)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.LogUpClosePicture)).EndInit();

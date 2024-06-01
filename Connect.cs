@@ -27,6 +27,8 @@ namespace FakeQQ
 			builder.Database = "fake_qq";
 			// 不校验ssl证书
 			builder.SslMode = MySqlSslMode.None;
+			// 允许参数
+			builder.AllowUserVariables = true;
 			// 定义与数据连接的链接
 			conn = new MySqlConnection(builder.ConnectionString);
 			// 打开这个链接
