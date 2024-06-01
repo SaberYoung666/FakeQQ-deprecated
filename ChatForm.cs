@@ -7,6 +7,11 @@ namespace FakeQQ
 {
     public partial class ChatForm : Form
     {
+        private Boolean is_changed = false;//判断用户输入是否改变
+        private String textBox_content;//文本框的值
+        private Point init_location = new Point(0, 0);//初始位置
+        private int click_count = 1;//消息发送次数
+
         public ChatForm()
         {
             InitializeComponent();
@@ -21,20 +26,19 @@ namespace FakeQQ
         {
             this.Close();
         }
-        private Boolean is_changed = false;//判断用户输入是否改变
-        private String textBox_content;//文本框的值
-        private Point init_location=new Point(0,0);//初始位置
-        private int click_count=1;//消息发送次数
 
+        // 发送消息
         private void btn_send_Click(object sender, EventArgs e)
         {
             if (click_count == 1)
             {
-                init_location=new Point(this.Width-50,20);//首消息位置
+                // 头像位置
+                init_location = new Point(this.Width - 50, 20);
             }
-            if (type == btn_type.text || type == btn_type.document)
+            if (type == btn_type.text)
             {
-                PictureBox userAvatar = new PictureBox();
+				// 动态添加聊天框
+				PictureBox userAvatar = new PictureBox();
                 RichTextBox message = new RichTextBox();
                 set_message(message, init_location);
                 set_userAvatar(userAvatar, init_location);
@@ -42,6 +46,11 @@ namespace FakeQQ
                 messageArea.Controls.Add(message);
                 messageArea.ScrollControlIntoView(userAvatar);
                 messageArea.ScrollControlIntoView(message);
+                // socket发送消息
+            }
+            else if (type == btn_type.document)
+            {
+                //TODO :发送文件
             }
             else if (type == btn_type.image)
             {
@@ -56,7 +65,8 @@ namespace FakeQQ
                 messageArea.ScrollControlIntoView(imageMessage);
             }
             click_count+=1;
-        }//动态添加聊天框
+        }
+        // 设置头像框属性
         private void set_userAvatar(PictureBox userAvatar,Point location)
         {
             userAvatar.Size = new Size(30, 30);
@@ -64,20 +74,35 @@ namespace FakeQQ
             userAvatar.Image = Properties.Resources.logo;
             userAvatar.SizeMode=PictureBoxSizeMode.StretchImage;
             RoundCorner.SetRoundRectRgn(userAvatar, 30);
-        }//设置头像框属性
-
+        }
+        // 设置消息框属性
         private void set_message(RichTextBox message,Point location)
         {
-                message.Text = textBox_content;
-                message.Width = 200;
-                message.BackColor = Color.White;
-                message.BorderStyle = BorderStyle.None;
-                message.ContentsResized += Message_ContentsResized;
-                message.Location = new Point(init_location.X - 210, init_location.Y + 5);
-                message.ReadOnly = true; 
-        }//设置消息框属性
+            message.Text = textBox_content;
+            message.Width = 200;
+            message.BackColor = Color.White;
+            message.BorderStyle = BorderStyle.None;
+            message.ContentsResized += Message_ContentsResized;
+            message.Location = new Point(init_location.X - 210, init_location.Y + 5);
+            message.ReadOnly = true;
+            //TODO :消息框圆角
+        }
+		// 实时获取输入框的值
+		private void richTextBox_content_TextChanged(object sender, EventArgs e)
+		{
+			textBox_content = richTextBox_content.Text;
+			if (textBox_content == "")
+			{
+				btn_send.Enabled = false;
+			}
+			else
+			{
+				is_changed = true;
+				btn_send.Enabled = true;
+			}
+		}
 
-        private void set_imageMessage(PictureBox imageMessage,Point location)
+		private void set_imageMessage(PictureBox imageMessage,Point location)
         {
             imageMessage.Location = init_location;
             imageMessage.ImageLocation = imageURL;
@@ -96,23 +121,6 @@ namespace FakeQQ
                 init_location.Y =messageArea.Height+20;
             }
         }
-
-        private void richTextBox_content_TextChanged(object sender, EventArgs e)
-        {
-            textBox_content = richTextBox_content.Text;
-            if (textBox_content=="")
-            {
-                btn_send.Enabled = false;
-            }
-            else
-            {
-                is_changed= true;
-                btn_send.Enabled = true;
-            }
-
-            
-        }
-
         private void picture_close_Click(object sender, EventArgs e)
         {
             this.Close();  
@@ -207,5 +215,7 @@ namespace FakeQQ
                 richTextBox_content.Paste();   //将剪贴板中的对象粘贴到对话框里
             }
         }
+
+
     }
 }
