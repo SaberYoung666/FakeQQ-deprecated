@@ -1,36 +1,46 @@
 ﻿using FakeQQ.RoundedCorners;
 using System;
 using System.Drawing;
+using System.Net.Sockets;
+using System.Net;
+using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace FakeQQ
 {
     public partial class ChatForm : Form
     {
-        public ChatForm()
+        private Boolean is_changed = false;//判断用户输入是否改变
+        private String textBox_content;//文本框的值
+        private Point init_location = new Point(0, 0);//初始位置
+        private int click_count = 1;//消息发送次数
+		// 创建套接字
+		Socket clientSocket = null;
+		Thread clientThread = null;
+
+		public ChatForm()
         {
             InitializeComponent();
         }
 
         private void ChatForm_Load(object sender, EventArgs e)
         {
-            
+            ConnectServer();
         }
 
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private Boolean is_changed = false;//判断用户输入是否改变
-        private String textBox_content;//文本框的值
-        private Point init_location=new Point(0,0);//初始位置
-        private int click_count=1;//消息发送次数
 
+        // 发送消息
         private void btn_send_Click(object sender, EventArgs e)
         {
             if (click_count == 1)
             {
-                init_location=new Point(messageArea.Width-50,20);//首消息位置
+                // 头像位置
+                init_location = new Point(this.Width - 50, 20);
             }
             PictureBox userAvatar = new PictureBox();
             RichTextBox message = new RichTextBox();
@@ -52,8 +62,8 @@ namespace FakeQQ
             userAvatar.Image = Properties.Resources.logo;
             userAvatar.SizeMode=PictureBoxSizeMode.StretchImage;
             RoundCorner.SetRoundRectRgn(userAvatar, 30);
-        }//设置头像框属性
-
+        }
+        // 设置消息框属性
         private void set_message(RichTextBox message,Point location)
         {
             if (type == btn_type.text)
@@ -65,7 +75,12 @@ namespace FakeQQ
                 message.ContentsResized += Message_ContentsResized;
                 message.Location = new Point(init_location.X - message.Width-20, init_location.Y + 5);
                 message.ReadOnly = true;
-            }
+				// 发送消息
+				string str = textBox_content;
+				byte[] buffer = Encoding.Default.GetBytes(str);
+				clientSocket.Send(buffer);
+                MessageBox.Show(textBox_content, "客户端发送消息");
+			}
             else if (type == btn_type.image)
             {
                 message.Width = 200;
@@ -87,7 +102,7 @@ namespace FakeQQ
 
             }
             
-        }//设置消息框属性
+        }
 
 
         private void Message_ContentsResized(object sender, ContentsResizedEventArgs e)
@@ -114,7 +129,6 @@ namespace FakeQQ
                 btn_send.Enabled = true;
             }
         }
-
         private void picture_close_Click(object sender, EventArgs e)
         {
             this.Close();  
@@ -211,5 +225,60 @@ namespace FakeQQ
                 richTextBox_content.Paste();   //将剪贴板中的对象粘贴到对话框里
             }
         }
+
+		//连接服务器
+		private void ConnectServer()
+		{
+			// 创建客户端套接字
+			clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+			// 设置IP地址
+			IPAddress address = IPAddress.Parse("127.0.0.1");
+			// 设置IP地址和端口号
+			IPEndPoint endPoint = new IPEndPoint(address, 8088);
+			try
+			{
+				// 与服务器建立连接
+				clientSocket.Connect(endPoint);
+                MessageBox.Show("成功连接到服务器");
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("连接失败：" + ex.Message, "友情提示");
+				return;
+			}
+			// 接收或发送消息 使用线程来实现
+			clientThread = new Thread(ReceiveMsg);
+			clientThread.IsBackground = true; //开启后台线程
+			clientThread.Start();
+		}
+        // 客户端接收消息
+		private void ReceiveMsg()
+		{
+			while (true)
+			{
+				byte[] recBuffer = new byte[1024 * 1024 * 2];//声明最大字符内存
+				int length = -1; //字节长度
+				try
+				{
+					length = clientSocket.Receive(recBuffer);//返回接收到的实际的字节数量
+				}
+				catch (SocketException ex)
+				{
+					break;
+				}
+				catch (Exception ex)
+				{
+                    MessageBox.Show("与服务器断开连接");
+					break;
+				}
+				//接收到消息
+				if (length > 0)
+				{
+					string msg = Encoding.Default.GetString(recBuffer, 0, length);//转译字符串(字符串，开始的索引，字符串长度)
+					string str = $"{DateTime.Now}【接收】{msg}{Environment.NewLine}";//接收的时间，内容，换行
+                    MessageBox.Show(str, "接收到的消息");
+				}
+			}
+		}
     }
 }
