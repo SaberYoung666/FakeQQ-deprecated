@@ -41,6 +41,18 @@
             this.richTextBox_content = new System.Windows.Forms.RichTextBox();
             this.messageArea = new System.Windows.Forms.Panel();
             this.QQEmojiArea = new System.Windows.Forms.Panel();
+            this.QQEmoji1 = new System.Windows.Forms.PictureBox();
+            this.QQEmoji2 = new System.Windows.Forms.PictureBox();
+            this.QQEmoji3 = new System.Windows.Forms.PictureBox();
+            this.QQEmoji5 = new System.Windows.Forms.PictureBox();
+            this.QQEmoji6 = new System.Windows.Forms.PictureBox();
+            this.QQEmoji4 = new System.Windows.Forms.PictureBox();
+            this.QQEmoji9 = new System.Windows.Forms.PictureBox();
+            this.QQEmoji7 = new System.Windows.Forms.PictureBox();
+            this.QQEmoji8 = new System.Windows.Forms.PictureBox();
+            this.QQEmoji10 = new System.Windows.Forms.PictureBox();
+            this.QQEmoji11 = new System.Windows.Forms.PictureBox();
+            this.QQEmoji12 = new System.Windows.Forms.PictureBox();
             this.navigation_bar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_minus)).BeginInit();
@@ -49,6 +61,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.picture_doc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_emoji)).BeginInit();
             this.messageArea.SuspendLayout();
+            this.QQEmojiArea.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji12)).BeginInit();
             this.SuspendLayout();
             // 
             // navigation_bar
@@ -186,7 +211,6 @@
             this.richTextBox_content.TabIndex = 3;
             this.richTextBox_content.Text = "";
             this.richTextBox_content.TextChanged += new System.EventHandler(this.richTextBox_content_TextChanged);
-            this.richTextBox_content.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.richTextBox_content_ControlAdded);
             // 
             // messageArea
             // 
@@ -200,13 +224,118 @@
             // 
             // QQEmojiArea
             // 
-            this.QQEmojiArea.AutoScroll = true;
-            this.QQEmojiArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.QQEmojiArea.Controls.Add(this.QQEmoji12);
+            this.QQEmojiArea.Controls.Add(this.QQEmoji11);
+            this.QQEmojiArea.Controls.Add(this.QQEmoji10);
+            this.QQEmojiArea.Controls.Add(this.QQEmoji8);
+            this.QQEmojiArea.Controls.Add(this.QQEmoji7);
+            this.QQEmojiArea.Controls.Add(this.QQEmoji9);
+            this.QQEmojiArea.Controls.Add(this.QQEmoji4);
+            this.QQEmojiArea.Controls.Add(this.QQEmoji6);
+            this.QQEmojiArea.Controls.Add(this.QQEmoji5);
+            this.QQEmojiArea.Controls.Add(this.QQEmoji3);
+            this.QQEmojiArea.Controls.Add(this.QQEmoji2);
+            this.QQEmojiArea.Controls.Add(this.QQEmoji1);
             this.QQEmojiArea.Location = new System.Drawing.Point(21, 71);
             this.QQEmojiArea.Name = "QQEmojiArea";
-            this.QQEmojiArea.Size = new System.Drawing.Size(400, 300);
-            this.QQEmojiArea.TabIndex = 4;
-            this.QQEmojiArea.Visible = false;
+            this.QQEmojiArea.Size = new System.Drawing.Size(443, 306);
+            this.QQEmojiArea.TabIndex = 0;
+            // 
+            // QQEmoji1
+            // 
+            this.QQEmoji1.Location = new System.Drawing.Point(25, 30);
+            this.QQEmoji1.Name = "QQEmoji1";
+            this.QQEmoji1.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji1.TabIndex = 0;
+            this.QQEmoji1.TabStop = false;
+            // 
+            // QQEmoji2
+            // 
+            this.QQEmoji2.Location = new System.Drawing.Point(134, 30);
+            this.QQEmoji2.Name = "QQEmoji2";
+            this.QQEmoji2.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji2.TabIndex = 1;
+            this.QQEmoji2.TabStop = false;
+            // 
+            // QQEmoji3
+            // 
+            this.QQEmoji3.Location = new System.Drawing.Point(245, 30);
+            this.QQEmoji3.Name = "QQEmoji3";
+            this.QQEmoji3.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji3.TabIndex = 2;
+            this.QQEmoji3.TabStop = false;
+            // 
+            // QQEmoji5
+            // 
+            this.QQEmoji5.Location = new System.Drawing.Point(25, 132);
+            this.QQEmoji5.Name = "QQEmoji5";
+            this.QQEmoji5.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji5.TabIndex = 3;
+            this.QQEmoji5.TabStop = false;
+            // 
+            // QQEmoji6
+            // 
+            this.QQEmoji6.Location = new System.Drawing.Point(134, 132);
+            this.QQEmoji6.Name = "QQEmoji6";
+            this.QQEmoji6.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji6.TabIndex = 4;
+            this.QQEmoji6.TabStop = false;
+            // 
+            // QQEmoji4
+            // 
+            this.QQEmoji4.Location = new System.Drawing.Point(363, 30);
+            this.QQEmoji4.Name = "QQEmoji4";
+            this.QQEmoji4.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji4.TabIndex = 5;
+            this.QQEmoji4.TabStop = false;
+            // 
+            // QQEmoji9
+            // 
+            this.QQEmoji9.Location = new System.Drawing.Point(25, 231);
+            this.QQEmoji9.Name = "QQEmoji9";
+            this.QQEmoji9.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji9.TabIndex = 6;
+            this.QQEmoji9.TabStop = false;
+            // 
+            // QQEmoji7
+            // 
+            this.QQEmoji7.Location = new System.Drawing.Point(245, 132);
+            this.QQEmoji7.Name = "QQEmoji7";
+            this.QQEmoji7.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji7.TabIndex = 7;
+            this.QQEmoji7.TabStop = false;
+            // 
+            // QQEmoji8
+            // 
+            this.QQEmoji8.Location = new System.Drawing.Point(363, 132);
+            this.QQEmoji8.Name = "QQEmoji8";
+            this.QQEmoji8.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji8.TabIndex = 8;
+            this.QQEmoji8.TabStop = false;
+            // 
+            // QQEmoji10
+            // 
+            this.QQEmoji10.Location = new System.Drawing.Point(134, 231);
+            this.QQEmoji10.Name = "QQEmoji10";
+            this.QQEmoji10.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji10.TabIndex = 9;
+            this.QQEmoji10.TabStop = false;
+            // 
+            // QQEmoji11
+            // 
+            this.QQEmoji11.Location = new System.Drawing.Point(245, 231);
+            this.QQEmoji11.Name = "QQEmoji11";
+            this.QQEmoji11.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji11.TabIndex = 10;
+            this.QQEmoji11.TabStop = false;
+            // 
+            // QQEmoji12
+            // 
+            this.QQEmoji12.Location = new System.Drawing.Point(363, 231);
+            this.QQEmoji12.Name = "QQEmoji12";
+            this.QQEmoji12.Size = new System.Drawing.Size(50, 50);
+            this.QQEmoji12.TabIndex = 11;
+            this.QQEmoji12.TabStop = false;
             // 
             // ChatForm
             // 
@@ -229,6 +358,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.picture_doc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_emoji)).EndInit();
             this.messageArea.ResumeLayout(false);
+            this.QQEmojiArea.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QQEmoji12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,5 +390,17 @@
         private System.Windows.Forms.PictureBox picture_doc;
         private System.Windows.Forms.PictureBox picture_emoji;
         private System.Windows.Forms.Panel QQEmojiArea;
+        private System.Windows.Forms.PictureBox QQEmoji12;
+        private System.Windows.Forms.PictureBox QQEmoji11;
+        private System.Windows.Forms.PictureBox QQEmoji10;
+        private System.Windows.Forms.PictureBox QQEmoji8;
+        private System.Windows.Forms.PictureBox QQEmoji7;
+        private System.Windows.Forms.PictureBox QQEmoji9;
+        private System.Windows.Forms.PictureBox QQEmoji4;
+        private System.Windows.Forms.PictureBox QQEmoji6;
+        private System.Windows.Forms.PictureBox QQEmoji5;
+        private System.Windows.Forms.PictureBox QQEmoji3;
+        private System.Windows.Forms.PictureBox QQEmoji2;
+        private System.Windows.Forms.PictureBox QQEmoji1;
     }
 }

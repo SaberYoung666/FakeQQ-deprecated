@@ -48,24 +48,17 @@ namespace FakeQQ
             friendsList.Add(new Friends("张三", @"C:\Users\ASUS\Desktop\images\OIP-C (3).jpg"));
             friendsList.Add(new Friends("李四", @"C:\Users\ASUS\Desktop\images\OIP-C.jpg"));
             friendsList.Add(new Friends("王五", @"C:\Users\ASUS\Desktop\images\OIP-C (2).jpg"));
-            friendsList.Add(new Friends("李四", @"C:\Users\ASUS\Desktop\images\OIP-C.jpg"));
-            friendsList.Add(new Friends("王五", @"C:\Users\ASUS\Desktop\images\OIP-C (2).jpg"));
-            friendsList.Add(new Friends("李四", @"C:\Users\ASUS\Desktop\images\OIP-C.jpg"));
-            friendsList.Add(new Friends("王五", @"C:\Users\ASUS\Desktop\images\OIP-C (2).jpg"));
-            Point panel_location=new Point(0,0);
-            Point label_location = new Point(70,15);
-            Point pictureBox_location = new Point(10, 0);
-            for (int i = 0; i < friendsList.Count; i++,panel_location.Y+=80)
+            Point label_location = new Point(70,160);
+            Point pictureBox_location = new Point(10, 140);
+
+            for (int i = 0; i < friendsList.Count; i++, label_location.Y += 80,pictureBox_location.Y+=80)
             {
-                Panel panel = new Panel();
                 PictureBox pictureBox = new PictureBox();
                 Label label = new Label();
-                set_panel(panel, panel_location);
                 set_pictureBox(pictureBox, pictureBox_location, i);
                 set_label(label, label_location, i);
-                panel.Controls.Add(pictureBox);
-                panel.Controls.Add(label);
-                panel_friendslist.Controls.Add(panel);
+                this.Controls.Add(pictureBox);
+                this.Controls.Add(label);
                 picCircle(pictureBox);
             }
             // 绘制窗体的圆角
@@ -118,10 +111,25 @@ namespace FakeQQ
             pictureBox.Size = new Size(50, 50);
             pictureBox.ImageLocation = friendsList[index].avatarURL;
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+<<<<<<< HEAD
             pictureBox.DoubleClick += Panel_DoubleClick;
             pictureBox.BackgroundImage = friendsList[index].avatar;
             pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox.DoubleClick += PictureBox_DoubleClick;
+=======
+            pictureBox.DoubleClick += PictureBox_DoubleClick;
+        }
+
+        private void PictureBox_DoubleClick(object sender, EventArgs e)
+        {
+            ChatForm chatForm=new ChatForm();
+            chatForm.Show(); 
+        }
+
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            
+>>>>>>> parent of d6c2cbe (完善表情包发送以及好友列表渲染)
         }
 
         // 双击好友头像的事件
@@ -136,19 +144,6 @@ namespace FakeQQ
             label.Location = label_location;
             label.BackColor = Color.Transparent;
             label.Font = new Font("微软雅黑",9f);
-            label.DoubleClick+= Panel_DoubleClick;
-        }
-
-        public void set_panel(Panel panel,Point panel_location)
-        {
-            panel.Size = new Size(panel_friendslist.Width-18, 80);
-            panel.Location = panel_location;
-            panel.DoubleClick += Panel_DoubleClick;
-        }
-        private void Panel_DoubleClick(object sender, EventArgs e)
-        {
-            ChatForm chatForm = new ChatForm();
-            chatForm.Show();
         }
 
         // 最小化

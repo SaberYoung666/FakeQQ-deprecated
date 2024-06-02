@@ -6,12 +6,12 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using System.Collections.Generic;
 
 namespace FakeQQ
 {
     public partial class ChatForm : Form
     {
+<<<<<<< HEAD
         // 判断用户输入是否改变
         private Boolean is_changed = false;
         // 文本框的值
@@ -34,6 +34,12 @@ namespace FakeQQ
         List<string> qqEmojiList= new List<string>();
         // qq表情链接
         private String qqEmojiURL;
+=======
+        private Boolean is_changed = false;//判断用户输入是否改变
+        private String textBox_content;//文本框的值
+        private Point init_location = new Point(0, 0);//初始位置
+        private int click_count = 1;//消息发送次数
+>>>>>>> parent of d6c2cbe (完善表情包发送以及好友列表渲染)
 		// 创建套接字
 		Socket clientSocket = null;
 		Thread clientThread = null;
@@ -53,9 +59,8 @@ namespace FakeQQ
 
         private void ChatForm_Load(object sender, EventArgs e)
         {
-            QQEmojiArea.Parent = this;
-            QQEmojiArea.BringToFront();
             ConnectServer();
+<<<<<<< HEAD
             qqEmojiList.Add(@"C:\Users\ASUS\Desktop\qq表情包\QQ表情1.jpg");
             qqEmojiList.Add(@"C:\Users\ASUS\Desktop\qq表情包\QQ表情2.jpg");
             qqEmojiList.Add(@"C:\Users\ASUS\Desktop\qq表情包\QQ表情3.jpg");
@@ -66,6 +71,8 @@ namespace FakeQQ
             qqEmojiList.Add(@"C:\Users\ASUS\Desktop\qq表情包\QQ表情8.jpg");
             qqEmojiList.Add(@"C:\Users\ASUS\Desktop\qq表情包\QQ表情9.jpg");
             LinkServer();
+=======
+>>>>>>> parent of d6c2cbe (完善表情包发送以及好友列表渲染)
         }
 
         // 关闭按钮
@@ -129,31 +136,16 @@ namespace FakeQQ
                 // 头像位置
                 init_location = new Point(this.Width - 50, 20);
             }
-            if (type == btn_type.text || type == btn_type.document)
-            {
-                PictureBox userAvatar = new PictureBox();
-                RichTextBox message = new RichTextBox();
-                set_userAvatar(userAvatar, init_location);
-                set_message(message, init_location);
-                messageArea.Controls.Add(message);
-                messageArea.Controls.Add(userAvatar);
-                messageArea.ScrollControlIntoView(userAvatar);
-                messageArea.ScrollControlIntoView(message);
-            }
-            if(type == btn_type.image || type == btn_type.emoji)
-            {
-                PictureBox userAvatar = new PictureBox();
-                PictureBox message = new PictureBox();
-                set_userAvatar(userAvatar, init_location);
-                set_message(message, init_location);
-                messageArea.Controls.Add(message);
-                messageArea.Controls.Add(userAvatar);
-                messageArea.ScrollControlIntoView(userAvatar);
-                messageArea.ScrollControlIntoView(message);
-            }
-            click_count +=1;
+            PictureBox userAvatar = new PictureBox();
+            RichTextBox message = new RichTextBox();
+            set_userAvatar(userAvatar, init_location);
+            set_message(message, init_location);
+            messageArea.Controls.Add(userAvatar);
+            messageArea.Controls.Add(message);
+            messageArea.ScrollControlIntoView(userAvatar);
+            messageArea.ScrollControlIntoView(message);
+            click_count+=1;
             richTextBox_content.Clear();
-            richTextBox_content.Controls.Clear();
             richTextBox_content.Focus();
             type = btn_type.text;
         }//动态添加聊天框
@@ -166,10 +158,11 @@ namespace FakeQQ
             RoundCorner.SetRoundRectRgn(userAvatar, 30);
         }
         // 设置消息框属性
-        private void set_message(Control message,Point location)
+        private void set_message(RichTextBox message,Point location)
         {
             if (type == btn_type.text)
             {
+<<<<<<< HEAD
             {
                 RichTextBox text_message = (RichTextBox)message;
                 text_message.Width = 200;
@@ -179,6 +172,15 @@ namespace FakeQQ
                 text_message.ContentsResized += Message_ContentsResized;
                 message.Location = new Point(init_location.X - text_message.Width-20, init_location.Y + 5);
                 text_message.ReadOnly = true;
+=======
+                message.Width = 200;
+                message.Text = textBox_content;
+                message.BackColor = Color.White;
+                message.BorderStyle = BorderStyle.None;
+                message.ContentsResized += Message_ContentsResized;
+                message.Location = new Point(init_location.X - message.Width-20, init_location.Y + 5);
+                message.ReadOnly = true;
+>>>>>>> parent of d6c2cbe (完善表情包发送以及好友列表渲染)
 				// 发送消息
 				string str = textBox_content;
                 byte[] buffer = Encoding.Default.GetBytes(str);
@@ -187,15 +189,11 @@ namespace FakeQQ
 			}
             else if (type == btn_type.image)
             {
-                PictureBox image_message= (PictureBox)message;
-                image_message.Image = Clipboard.GetImage();
-                image_message.SizeMode=PictureBoxSizeMode.AutoSize;
-                image_message.Location = new Point(init_location.X - image_message.Width - 20, init_location.Y + 5);
-                init_location.Y += image_message.Height + 20;
-                if (init_location.Y > messageArea.Height)
-                {
-                    init_location.Y = messageArea.Height + 20;
-                }
+                message.Width = 200;
+                message.BorderStyle= BorderStyle.None;
+                message.Location = new Point(init_location.X - message.Width-20, init_location.Y + 5);
+                message.ContentsResized += Message_ContentsResized;
+                message.Paste();
             }
             else if(type == btn_type.document)
             {
@@ -216,9 +214,15 @@ namespace FakeQQ
             init_location.Y += message.Height;
             if (init_location.Y > messageArea.Height)
             {
+<<<<<<< HEAD
                 init_location.Y = messageArea.Height + 20;
                 }
             }  
+=======
+
+            }
+            
+>>>>>>> parent of d6c2cbe (完善表情包发送以及好友列表渲染)
         }
 
 
@@ -334,36 +338,6 @@ namespace FakeQQ
         private void picture_emoji_Click(object sender, EventArgs e)
         {
             type= btn_type.emoji;
-            Point qqEmojiLocation=new Point(20,20);
-            QQEmojiArea.Visible= true;
-            for(int i = 0; i < qqEmojiList.Count; i++)
-            {
-                PictureBox qqEmoji=new PictureBox();
-                qqEmoji.ImageLocation = qqEmojiList[i];
-                qqEmoji.Location = qqEmojiLocation;
-                qqEmoji.Size = new Size(40, 40);
-                qqEmoji.SizeMode = PictureBoxSizeMode.StretchImage;
-                qqEmoji.Click += QqEmoji_Click;
-                qqEmojiLocation.X += 72;
-                if (qqEmojiLocation.X >=QQEmojiArea.Width-60)
-                {
-                    qqEmojiLocation.Y += 50;
-                    qqEmojiLocation.X = 20;
-                }
-                QQEmojiArea.Controls.Add(qqEmoji);
-            }
-        }
-
-        private void QqEmoji_Click(object sender, EventArgs e)
-        {
-            QQEmojiArea.VerticalScroll.Value = 0;
-            PictureBox qq_emoji=new PictureBox();
-            qq_emoji.ImageLocation = (sender as PictureBox).ImageLocation;
-            qqEmojiURL = (sender as PictureBox).ImageLocation;
-            qq_emoji.Size = new Size(100, 100);
-            qq_emoji.SizeMode = PictureBoxSizeMode.StretchImage;
-            richTextBox_content.Controls.Add(qq_emoji);
-            QQEmojiArea.Visible = false;
         }
 
         // 发送图片
@@ -440,7 +414,5 @@ namespace FakeQQ
 				}
 			}
 		}
-
-        
     }
 }

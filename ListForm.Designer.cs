@@ -166,7 +166,6 @@
             this.picture_qqicon = new System.Windows.Forms.PictureBox();
             this.picture_minus = new System.Windows.Forms.PictureBox();
             this.picture_close = new System.Windows.Forms.PictureBox();
-            this.panel_friendslist = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_qqicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_minus)).BeginInit();
@@ -259,24 +258,13 @@
             this.picture_close.MouseLeave += new System.EventHandler(this.picture_close_MouseLeave);
             this.picture_close.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picture_close_MouseMove);
             // 
-            // panel_friendslist
-            // 
-            this.panel_friendslist.AutoScroll = true;
-            this.panel_friendslist.BackColor = System.Drawing.Color.Transparent;
-            this.panel_friendslist.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_friendslist.Location = new System.Drawing.Point(0, 167);
-            this.panel_friendslist.Name = "panel_friendslist";
-            this.panel_friendslist.Size = new System.Drawing.Size(400, 483);
-            this.panel_friendslist.TabIndex = 7;
-            // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(400, 650);
-            this.Controls.Add(this.panel_friendslist);
+            this.ClientSize = new System.Drawing.Size(381, 641);
             this.Controls.Add(this.picture_close);
             this.Controls.Add(this.picture_minus);
             this.Controls.Add(this.picture_qqicon);
@@ -306,8 +294,11 @@
         private System.Windows.Forms.PictureBox picture_qqicon;
         private System.Windows.Forms.PictureBox picture_minus;
         private System.Windows.Forms.PictureBox picture_close;
+<<<<<<< HEAD
 		private OvalPictureBox avatar;
 	}
         private System.Windows.Forms.Panel panel_friendslist;
+=======
+>>>>>>> parent of d6c2cbe (完善表情包发送以及好友列表渲染)
     }
 }
