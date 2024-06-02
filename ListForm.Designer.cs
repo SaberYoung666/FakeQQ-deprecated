@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListForm));
 			this.userName = new System.Windows.Forms.Label();
@@ -157,6 +158,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+=======
+>>>>>>> parent of 7d4d52d (完成socket功能，好友列表功能)
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListForm));
             this.avatar = new System.Windows.Forms.PictureBox();
@@ -288,6 +291,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox avatar;
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.Label signature;
         private System.Windows.Forms.ImageList imageList1;
@@ -295,10 +300,13 @@
         private System.Windows.Forms.PictureBox picture_minus;
         private System.Windows.Forms.PictureBox picture_close;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		private OvalPictureBox avatar;
 	}
         private System.Windows.Forms.Panel panel_friendslist;
 =======
 >>>>>>> parent of d6c2cbe (完善表情包发送以及好友列表渲染)
+=======
+>>>>>>> parent of 7d4d52d (完成socket功能，好友列表功能)
     }
 }

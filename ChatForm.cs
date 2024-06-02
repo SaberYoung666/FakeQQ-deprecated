@@ -12,6 +12,7 @@ namespace FakeQQ
     public partial class ChatForm : Form
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         // 判断用户输入是否改变
         private Boolean is_changed = false;
         // 文本框的值
@@ -35,31 +36,29 @@ namespace FakeQQ
         // qq表情链接
         private String qqEmojiURL;
 =======
+=======
+>>>>>>> parent of 7d4d52d (完成socket功能，好友列表功能)
         private Boolean is_changed = false;//判断用户输入是否改变
         private String textBox_content;//文本框的值
         private Point init_location = new Point(0, 0);//初始位置
         private int click_count = 1;//消息发送次数
+<<<<<<< HEAD
 >>>>>>> parent of d6c2cbe (完善表情包发送以及好友列表渲染)
+=======
+>>>>>>> parent of 7d4d52d (完成socket功能，好友列表功能)
 		// 创建套接字
 		Socket clientSocket = null;
 		Thread clientThread = null;
 
-        public ChatForm()
+		public ChatForm()
         {
             InitializeComponent();
-        }
-
-		public ChatForm(string sendAccount, string receiveAccount, Socket clientSocket)
-        {
-            InitializeComponent();
-            this.sendAccount = sendAccount;
-            this.receiveAccount = receiveAccount;
-            this.clientSocket = clientSocket;
         }
 
         private void ChatForm_Load(object sender, EventArgs e)
         {
             ConnectServer();
+<<<<<<< HEAD
 <<<<<<< HEAD
             qqEmojiList.Add(@"C:\Users\ASUS\Desktop\qq表情包\QQ表情1.jpg");
             qqEmojiList.Add(@"C:\Users\ASUS\Desktop\qq表情包\QQ表情2.jpg");
@@ -73,63 +72,17 @@ namespace FakeQQ
             LinkServer();
 =======
 >>>>>>> parent of d6c2cbe (完善表情包发送以及好友列表渲染)
+=======
+>>>>>>> parent of 7d4d52d (完成socket功能，好友列表功能)
         }
 
-        // 关闭按钮
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-		private void picture_close_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
-		private void picture_minus_Click(object sender, EventArgs e)
-		{
-			this.WindowState = FormWindowState.Minimized;
-		}
-		private void picture_minus_MouseMove(object sender, MouseEventArgs e)
-		{
-			picture_minus.BackColor = Color.Red;
-		}
-		private void picture_minus_MouseLeave(object sender, EventArgs e)
-		{
-			picture_minus.BackColor = Color.Transparent;
-		}
-		private void picture_close_MouseMove(object sender, MouseEventArgs e)
-		{
-			picture_close.BackColor = Color.Red;
-		}
-		private void picture_close_MouseLeave(object sender, EventArgs e)
-		{
-			picture_close.BackColor = Color.Transparent;
-		}
 
-		// 窗体移动
-		private void navigation_bar_MouseDown(object sender, MouseEventArgs e)
-		{
-			if (e.Button == MouseButtons.Left)
-			{
-				mousepoint = e.Location;
-				leftflag = true;
-			}
-		}
-		private void navigation_bar_MouseMove(object sender, MouseEventArgs e)
-		{
-			if (leftflag)
-			{
-				Left = MousePosition.X - mousepoint.X;
-				Top = MousePosition.Y - mousepoint.Y;
-			}
-		}
-		private void navigation_bar_MouseUp(object sender, MouseEventArgs e)
-		{
-			leftflag = false;
-		}
-
-		// 发送消息
-		// 动态添加聊天框
-		private void btn_send_Click(object sender, EventArgs e)
+        // 发送消息
+        private void btn_send_Click(object sender, EventArgs e)
         {
             if (click_count == 1)
             {
@@ -183,7 +136,7 @@ namespace FakeQQ
 >>>>>>> parent of d6c2cbe (完善表情包发送以及好友列表渲染)
 				// 发送消息
 				string str = textBox_content;
-                byte[] buffer = Encoding.Default.GetBytes(str);
+				byte[] buffer = Encoding.Default.GetBytes(str);
 				clientSocket.Send(buffer);
                 MessageBox.Show(textBox_content, "客户端发送消息");
 			}
@@ -209,11 +162,12 @@ namespace FakeQQ
 
         private void Message_ContentsResized(object sender, ContentsResizedEventArgs e)
         {
-            RichTextBox message = sender as RichTextBox;
-            message.Height = e.NewRectangle.Height;
-            init_location.Y += message.Height;
+            RichTextBox message= sender as RichTextBox;
+            message.Height=e.NewRectangle.Height;
+            init_location.Y+=message.Height;
             if (init_location.Y > messageArea.Height)
             {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 init_location.Y = messageArea.Height + 20;
                 }
@@ -233,6 +187,8 @@ namespace FakeQQ
             init_location.Y+=message.Height;
             if (init_location.Y > messageArea.Height)
             {
+=======
+>>>>>>> parent of 7d4d52d (完成socket功能，好友列表功能)
                 init_location.Y =messageArea.Height+20;
             }
         }
@@ -274,12 +230,15 @@ namespace FakeQQ
 
         private void picture_minus_MouseLeave(object sender, EventArgs e)
         {
+<<<<<<< HEAD
         }
             picture_minus.BackColor= Color.Red;
         }
 
         private void picture_minus_MouseLeave(object sender, EventArgs e)
         {
+=======
+>>>>>>> parent of 7d4d52d (完成socket功能，好友列表功能)
             picture_minus.BackColor= Color.Transparent;
         }
 
@@ -334,13 +293,11 @@ namespace FakeQQ
                 Clipboard.Clear();   //清空剪贴板
                 System.Collections.Specialized.StringCollection files = new System.Collections.Specialized.StringCollection();
 
-        // 发送表情包
         private void picture_emoji_Click(object sender, EventArgs e)
         {
             type= btn_type.emoji;
         }
 
-        // 发送图片
         private void picture_image_Click(object sender, EventArgs e)
         {
             type = btn_type.image;
@@ -359,6 +316,7 @@ namespace FakeQQ
 
 		//连接服务器
 		private void ConnectServer()
+<<<<<<< HEAD
 		{
 			// 创建客户端套接字
 			clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -378,6 +336,24 @@ namespace FakeQQ
 		// 连接服务器
 		private void LinkServer()
 		{
+=======
+		{
+			// 创建客户端套接字
+			clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+			// 设置IP地址
+			IPAddress address = IPAddress.Parse("127.0.0.1");
+			// 设置IP地址和端口号
+			IPEndPoint endPoint = new IPEndPoint(address, 8088);
+			try
+			{
+				// 与服务器建立连接
+				clientSocket.Connect(endPoint);
+                MessageBox.Show("成功连接到服务器");
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("连接失败：" + ex.Message, "友情提示");
+>>>>>>> parent of 7d4d52d (完成socket功能，好友列表功能)
 				return;
 			}
 			// 接收或发送消息 使用线程来实现
