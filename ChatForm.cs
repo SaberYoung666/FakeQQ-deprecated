@@ -82,6 +82,10 @@ namespace FakeQQ
                 message.ContentsResized += Message_ContentsResized;
                 message.Paste();
             }
+            else if (type == btn_type.emoji)
+            {
+
+            }
             
         }//设置消息框属性
 
